@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    scroll-behavior: smooth !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --base-color: #824137
+}
+
+.base-color {
+    color: var(--base-color) !important;
+}
+
+.base-bg {
+    background-color: var(--base-color) !important;
+}
+
+.border-base {
+    border-color: var(--base-color) !important;
+}
+
+.active a {
+    color: var(--base-color) !important;
+}
+
+a.nav-link {
+    transition: .3s all;
+    -webkit-transition: .3s all;
+    -moz-transition: .3s all;
+    -ms-transition: .3s all;
+    -o-transition: .3s all;
+    font-size: 1rem;
+}
+
+a.nav-link:hover {
+    color: var(--base-color) !important;
+}
+
+
+/* navbar styles  */
+
+#navbarDropdown::after {
+    display: none !important;
+}
+
+.navbar-brand {
+    position: absolute;
+    height: 100px;
+    display: block;
+    /* z-index: 1; */
+}
+
+@media(max-width: 768px) {
+    .navbar-brand {
+        position: static;
+        height: 100px;
+        display: block;
+        /* z-index: 1; */
+    }
+    ul.navbar-nav.ml-auto {
+        flex-direction: row;
+    }
+    ul.navbar-nav.ml-auto li:not(:first-child) {
+        margin: 0 2rem;
+    }
+}
+
+@media(min-width: 768px) and (max-width:992px) {
+    .navbar-brand {
+        position: static;
+        height: 100px;
+        display: block;
+        /* z-index: 1; */
+    }
+    #navbarSupportedContent {
+        justify-content: space-between;
+    }
+    #navbarSupportedContent::after {
+        content: " ";
+        clear: both;
+    }
+    #navbarSupportedContent form {
+        margin: 0 !important;
+        float: left;
+    }
+    #navbarSupportedContent ul {
+        float: right;
+        margin: 0 !important;
+    }
+    ul.navbar-nav.ml-auto {
+        flex-direction: row;
+    }
+    ul.navbar-nav.ml-auto li:not(:first-child) {
+        margin: 0 2rem;
+    }
+}
+
+.dropdown-menu {
+    right: 0 !important;
+    left: revert !important;
+}
