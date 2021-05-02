@@ -16,21 +16,24 @@ import { ApplicationErrorComponent } from './shared/application-error/applicatio
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ResourceNotFoundComponent } from './shared/resource-not-found/resource-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from './shared/material/material.module';
-import {AdminModule} from "./admin/admin.module";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {FilesModule} from "./shared/files/files.module";
+import { MaterialModule } from './shared/material/material.module';
+import { AdminModule } from './admin/admin.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilesModule } from './shared/files/files.module';
 import {
   AccordionModule,
   CarouselModule,
   ModalModule,
   PaginationModule,
   PopoverModule,
-  TooltipModule
-} from "ngx-bootstrap";
+  TooltipModule,
+} from 'ngx-bootstrap';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -52,6 +55,8 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     ProfileComponent,
     ProductCardComponent,
     LoginDialogComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     FormsModule,
     ReactiveFormsModule,
     FilesModule,
+    HttpClientModule,
     CarouselModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
@@ -69,6 +75,6 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     AccordionModule.forRoot(),
     PaginationModule.forRoot(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

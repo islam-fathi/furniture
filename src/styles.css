@@ -51,6 +51,11 @@ a.nav-link:hover {
     color: var(--base-color) !important;
 }
 
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    white-space: revert !important;
+}
+
 
 /* navbar styles  */
 
@@ -113,4 +118,26 @@ a.nav-link:hover {
 .dropdown-menu {
     right: 0 !important;
     left: revert !important;
+}
+
+
+/* footer  */
+
+.example-footer {
+    z-index: 1000;
+    position: relative;
+    justify-content: center;
+    top: 100% !important;
+    display: block !important;
+    box-shadow: 0px -10px 5px #e0dbdb59;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 2px solid var(--base-color) !important;
+}
+
+form.newsletter input {
+    border-bottom: 1px solid #333 !important;
 }
