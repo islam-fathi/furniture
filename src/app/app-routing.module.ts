@@ -12,6 +12,12 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { CategoryDetailsComponent } from './components/category-details/category-details.component';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
 import { PreloadAllModules, RouterModule } from '@angular/router';
+import { ProfileResolverService } from './resolvers/profile/profile-resolver.service';
+import { OrderResolverService } from './resolvers/order/order-resolver.service';
+import { CartResolverService } from './resolvers/cart/cart-resolver.service';
+import { ProductResolverService } from './resolvers/product/product-resolver.service';
+import { CategoryResolverService } from './resolvers/category/category-resolver.service';
+import { UserAuthGuard } from './guards/user-auth.guard';
 
 
 const routes =[
@@ -21,15 +27,27 @@ const routes =[
 },
 {
   path: 'profile',
-  component: ProfileComponent
+  component: ProfileComponent,
+  resolve: {
+    profile: ProfileResolverService
+  },
+  canActivate: [UserAuthGuard]
 },
 {
   path: 'orders',
-  component: OrderComponent
+  component: OrderComponent,
+  resolve: {
+    order: OrderResolverService
+  },
+  canActivate: [UserAuthGuard]
 },
 {
   path: 'cart',
-  component: CartComponent
+  component: CartComponent,
+  resolve: {
+    cart: CartResolverService
+  },
+  canActivate: [UserAuthGuard]
 },
 {
   path: 'auth',
@@ -46,7 +64,11 @@ const routes =[
 },
 {
   path: 'products',
-  component: ProductListComponent
+  component: ProductListComponent,
+  resolve: {
+    products: ProductResolverService
+  }
+
 },
 {
   path: 'products/:id',
@@ -54,7 +76,10 @@ const routes =[
 },
 {
   path: 'categories',
-  component: CategoryListComponent
+  component: CategoryListComponent,
+  resolve: {
+    categories: CategoryResolverService
+  }
 },
 {
   path: 'categories/:id',
