@@ -1,6 +1,4 @@
 import { Observable } from 'rxjs';
-import { AuthService } from './../../services/auth/auth.service';
-import { CartService } from './../../services/cart/cart.service';
 import { Injectable } from '@angular/core';
 import {
   Resolve,
@@ -8,6 +6,8 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Cart } from 'src/app/models/cart';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
