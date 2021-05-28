@@ -7,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
+  showPass = true;
+  
   constructor() { }
 
+
+  
   ngOnInit(): void {
   }
 

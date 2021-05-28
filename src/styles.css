@@ -127,7 +127,7 @@ a.nav-link:hover {
     z-index: 1000;
     position: relative;
     justify-content: center;
-    top: 100% !important;
+    /* top: 100% !important; */
     display: block !important;
     box-shadow: 0px -10px 5px #e0dbdb59;
 }
@@ -135,9 +135,27 @@ a.nav-link:hover {
 input:focus {
     outline: none !important;
     box-shadow: none !important;
-    border: 2px solid var(--base-color) !important;
+    /* border: 2px solid var(--base-color) !important; */
+    border: 0 !important;
 }
 
 form.newsletter input {
     border-bottom: 1px solid #333 !important;
+}
+
+::ng-deep .mat-input-underline {
+    display: none;
+}
+
+
+::ng-deep .mat-body p, .mat-body-1 p, .mat-typography p{
+    margin: 0 !important;
+}
+
+h2{
+    font-size: 2rem !important;
+}
+
+.p-font-size{
+    font-size: 1rem !important;
 }

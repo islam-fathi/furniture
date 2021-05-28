@@ -5,7 +5,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { OrderComponent } from './components/order/order.component';
 import { CartComponent } from './components/cart/cart.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
@@ -18,12 +17,23 @@ import { CartResolverService } from './resolvers/cart/cart-resolver.service';
 import { ProductResolverService } from './resolvers/product/product-resolver.service';
 import { CategoryResolverService } from './resolvers/category/category-resolver.service';
 import { UserAuthGuard } from './guards/user-auth.guard';
+import { SignupComponent } from './components/auth/signup/signup.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 const routes =[
 {
-  path: 'home',
+  path: '',
   component: HomeComponent
+},
+{
+  path: 'about',
+  component: AboutComponent
+},
+{
+  path: 'contact',
+  component: ContactComponent
 },
 {
   path: 'profile',
@@ -57,8 +67,8 @@ const routes =[
       component: LoginComponent
     },
     {
-      path: 'register',
-      component: RegisterComponent
+      path: 'signup',
+      component: SignupComponent
     }
   ]
 },

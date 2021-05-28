@@ -1,4 +1,98 @@
-<!-- <div *ngIf="errorMessage">
-    <p>invalid user credintial!</p>
-    <p>either username or password are incorrect!</p>
-</div> -->
+<div class="modal-body p-0 w-50 mx-auto border">
+    <!-- Tabs content -->
+    <nav>
+        <div class="nav nav-tabs nav-fill border-bottom-0" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link px-3 py-4 active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Sign in</a>
+            <a class="nav-item nav-link px-3 py-4" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sign up</a>
+        </div>
+    </nav>
+    <!-- login  -->
+    <div class="tab-content py-3 px-3 text-center" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <form class="login-form text-center py-4 form" novalidate [formGroup]="authCredentialsDto" (ngSubmit)="userLogin()" id="login-form">
+                    <mat-form-field appearance="outline" 
+                    class="form-group mb-4 d-block m-auto text-center rounded-pill" 
+                    style="width: 75%">
+                        <input type="text" class="rounded-pill form-control m-auto" 
+                        placeholder="Email or Username" 
+                        formControlName="username" matInput 
+                        id="username" name="username" 
+                        required>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="form-group mb-4 d-block m-auto text-center rounded-pill" 
+                    style="width: 75%">
+                        <input class="rounded-pill form-control m-auto" 
+                        placeholder="Password" formControlName="password"
+                        matInput id="password" [type]="showPass ? 'password': 'text'"
+                        name="password" type="text" required>
+                        <button type="button" mat-icon-button matSuffix (click)="showPass = !showPass"
+                        [attr.aria-label]="'Hide password'">
+                            <mat-icon>{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>    
+                <div class="forget-password-holder py-3 w-75 m-auto d-flex align-items-center justify-content-between">
+                    <a href="#" class="text-muted">Forget Password?</a>
+                    <div class="form-group mb-0">
+                        <input type="checkbox" name="" id="remember" class="">
+                        <label for="remember" class="text-muted pointer">Remember me</label>
+                    </div>
+                </div> 
+                <div class="submit-holder w-75 m-auto text-left">
+                    <button type="submit" [disabled]="!authCredentialsDto.valid" class="btn text-white rounded-lg py-3 px-5 base-bg hover-invers hvr-skew">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- signup -->
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <form action="" class="login-form text-center py-4" id="signup-form">
+                <mat-form-field appearance="outline" 
+                class="form-group mb-4 d-block m-auto text-center rounded-pill" 
+                style="width: 75%">
+                    <input type="text" class="rounded-pill form-control m-auto" 
+                    placeholder="Email or Username" 
+                    formControlName="username" matInput 
+                    id="username" name="username" 
+                    required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" 
+                class="form-group mb-4 d-block m-auto text-center rounded-pill" 
+                style="width: 75%">
+                    <input type="number" class="rounded-pill form-control m-auto" 
+                    placeholder="Enter your mobile number" 
+                    formControlName="username" matInput 
+                    id="username" name="username" 
+                    required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="form-group mb-4 d-block m-auto text-center rounded-pill" 
+                style="width: 75%">
+                    <input class="rounded-pill form-control m-auto" 
+                    placeholder="Password" formControlName="password"
+                    matInput id="password" [type]="showPass ? 'password': 'text'"
+                    name="password" type="text" required>
+                    <button type="button" mat-icon-button matSuffix (click)="showPass = !showPass"
+                    [attr.aria-label]="'Hide password'">
+                        <mat-icon>{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>    
+                <mat-form-field appearance="outline" class="form-group mb-4 d-block m-auto text-center rounded-pill" 
+                style="width: 75%">
+                    <input class="rounded-pill form-control m-auto" 
+                    placeholder="Password" formControlName="password"
+                    matInput id="password" [type]="showPass ? 'password': 'text'"
+                    name="password" type="text" required>
+                </mat-form-field>    
+
+                <div class="submit-holder w-75 m-auto text-left">
+                    <button [disabled]="!authCredentialsDto.valid" class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
+                        Sign up
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tabs content -->
+</div>

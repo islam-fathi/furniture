@@ -36,6 +36,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { OurServicesComponent } from './components/our-services/our-services.component';
+import { AboutComponent } from './components/about/about.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -61,6 +63,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SignupComponent,
     HeaderComponent,
     FooterComponent,
+    OurServicesComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
