@@ -20,6 +20,9 @@ import { UserAuthGuard } from './guards/user-auth.guard';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 
 const routes =[
@@ -28,12 +31,28 @@ const routes =[
   component: HomeComponent
 },
 {
+  path: 'home',
+  component: HomeComponent
+},
+{
   path: 'about',
   component: AboutComponent
 },
 {
+  path: 'shop',
+  component: ShopComponent
+},
+{
   path: 'contact',
   component: ContactComponent
+},
+{
+  path: 'terms',
+  component: TermsAndConditionsComponent
+},
+{
+  path: 'privacy',
+  component: PrivacyComponent
 },
 {
   path: 'profile',

@@ -21,8 +21,8 @@ export class AuthService {
   ) {
   }
 
-  _registerUrl = `https://furniture-v1.herokuapp.com/`;
-  _loginUrl = `http://localhost:4200/auth/login`;
+  _registerUrl = `https://furniture-v1.herokuapp.com/lamaderas/v1/ADM/Admin/register`;
+  _loginUrl = `https://furniture-v1.herokuapp.com/lamaderas/v1/ADM/Admin/login`;
   _userUrl = `http://localhost:4200/auth/current-user`;
   _profileUrl = `http://localhost:4200/profile`;
   private _usersURL = `http://localhost:4200/auth/system-users`;

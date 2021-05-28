@@ -19,10 +19,33 @@
                             </div>
                         </form>
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active mr-2">
-                                <a mat-button routerLink="/cart" routerLinkActive="active" style="font-family: 'Anton', sans-serif; font-size: 23px">
-                                    <i style="font-size: 23px" class="fas fa-cart-plus" [matBadge]="5" matBadgeOverlap="false" matBadgePosition="above" matBadgeSize="medium" matBadgeColor="warn"></i>
-                                </a>
+                            <li class="nav-item active mr-2 pr-2">
+                                <button mat-icon-button [matMenuTriggerFor]="cart" 
+                                    aria-label="Example icon-button with a menu">
+                                    <a mat-button
+                                        routerLinkActive="active" 
+                                        style="font-family: 'Anton', sans-serif; font-size: 23px">
+                                        <i style="font-size: 23px" class="fas fa-cart-plus" 
+                                        [matBadge]="5" matBadgeOverlap="false" 
+                                        matBadgePosition="above" 
+                                        matBadgeSize="medium" 
+                                        matBadgeColor="warn">
+                                        </i>
+                                    </a>
+                                </button>
+                                <mat-menu #cart="matMenu" id="cart-dropdown">
+                                    <button mat-menu-item class="d-flex align-items-center justify-content-between">
+                                        <img src="../../../assets/images/PNG content/chair.png" 
+                                        class="rounded-lg" alt="">
+                                        <span>Product 1</span>
+                                    </button>
+                                    <button mat-menu-item>
+                                        <a routerLink="/cart" class="btn d-block mw-100 text-white rounded-pill py-2 px-2 base-bg hover-invers
+                                        small-txt">
+                                            View Cart
+                                        </a>            
+                                    </button>
+                                </mat-menu>
                             </li>
                             <li class="nav-item active mr-2">
                                 <a routerLink="/auth/login" mat-button>
@@ -31,8 +54,8 @@
                             </li>
                             <li class="nav-item active mr-2">
                                 <a routerLink="/auth/signup" mat-button>
-                                Register
-                            </a>
+                                    Register
+                                </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

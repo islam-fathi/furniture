@@ -38,6 +38,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
 import { AboutComponent } from './components/about/about.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -65,6 +69,10 @@ import { AboutComponent } from './components/about/about.component';
     FooterComponent,
     OurServicesComponent,
     AboutComponent,
+    TermsAndConditionsComponent,
+    PrivacyComponent,
+    ShopComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

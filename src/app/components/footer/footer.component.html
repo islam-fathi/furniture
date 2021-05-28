@@ -10,9 +10,9 @@
             <div class="col-md-3 mb-3">
                 <h5 class="base-color mb-3">Get to Know Us</h5>
                 <ul class="list-unstyled">
-                    <li><a href="" mat-button class="text-muted hover-base-color">About</a></li>
-                    <li><a href="" mat-button class="text-muted hover-base-color">Policies</a></li>
-                    <li><a href="" mat-button class="text-muted hover-base-color">Careers</a></li>
+                    <li><a [routerLink]="['/about']" mat-button class="text-muted hover-base-color">About</a></li>
+                    <li><a [routerLink]="['/privacy']" mat-button class="text-muted hover-base-color">Policies</a></li>
+                    <li><a [routerLink]="['/terms']" mat-button class="text-muted hover-base-color">Terms & Conditions</a></li>
                     <li><a href="" mat-button class="text-muted hover-base-color">Press</a></li>
                 </ul>
             </div>
@@ -20,7 +20,10 @@
                 <h5 class="base-color mb-3">Follow Us</h5>
                 <ul class="list-unstyled small">
                     <li class="mb-2">
-                        <a href="" mat-button class="text-muted hover-base-color d-flex align-items-center"><img src="../assets/images/Icons/facebook.svg" class="mr-2" alt=""> Facebook</a>
+                        <a href="" mat-button class="text-muted hover-base-color d-flex align-items-center">
+                            <img src="../assets/images/Icons/facebook.svg" class="mr-2" alt="">
+                            Facebook
+                        </a>
                     </li>
                     <li class="mb-2">
                         <a href="" mat-button class="text-muted hover-base-color"><img src="../assets/images/Icons/twitter.svg" class="mr-2" alt="">Twitter</a>

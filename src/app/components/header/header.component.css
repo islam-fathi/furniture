@@ -1,0 +1,7 @@
+::ng-deep .mat-menu-content:not(:empty){
+    width: 200px;
+}
+
+#cart-dropdown{
+    
+}
