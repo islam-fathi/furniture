@@ -42,6 +42,7 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { IncrementInputComponent } from './components/increment-input/increment-input.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -73,6 +74,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     PrivacyComponent,
     ShopComponent,
     CheckoutComponent,
+    IncrementInputComponent,
   ],
   imports: [
     BrowserModule,

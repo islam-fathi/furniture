@@ -533,3 +533,8 @@ nav .pagination li:last-child .page-link {
 .login-form .forget-password-holder a:hover {
     color: var(--base-color) !important;
 }
+
+
+::ng-deep h1{
+    font: 2.5rem !important;
+}

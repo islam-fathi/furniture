@@ -1,1 +1,283 @@
-<p>checkout works!</p>
+<!-- breadcrumb   -->
+<nav aria-label="breadcrumb">
+    <div class="container px-0">
+        <ol class="breadcrumb bg-white px-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item">Cart</li>
+            <li class="breadcrumb-item active" aria-current="page">Chekout</li>
+        </ol>
+    </div>
+</nav>
+
+<mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+    <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Shipping Address</ng-template>
+        <div class="container text-center">
+            <form class="example-form w-75 mx-auto my-5">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input matInput type="text" placeholder="First Name" required>
+                        </mat-form-field>        
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput type="text" placeholder="Last Name" required>
+                        </mat-form-field>        
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Company Name</mat-label>
+                            <input matInput type="text" placeholder="Company Name" required>
+                        </mat-form-field>        
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Country</mat-label>
+                            <input matInput type="text" placeholder="Country" required>
+                        </mat-form-field>        
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>City</mat-label>
+                            <input matInput type="text" placeholder="City" required>
+                        </mat-form-field>        
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Postal Code</mat-label>
+                            <input matInput type="number" placeholder="Postal Code" required>
+                        </mat-form-field>        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput type="text" placeholder="Address" required>
+                        </mat-form-field>        
+                    </div>    
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Email Address</mat-label>
+                            <input matInput type="email" placeholder="Email Address" required>
+                        </mat-form-field>        
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                            <mat-label>Phone (Optional)</mat-label>
+                            <input matInput type="number" placeholder="Phone (Optional)" >
+                        </mat-form-field>        
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <p class="mb-0">
+                            <a [routerLink]="['/auth/signup']" class="base-color font-weight-bold">
+                                Create an Account?
+                            </a>
+                        </p>
+                    </div>    
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button mat-button matStepperNext class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
+                        Next
+                    </button>    
+                </div>
+            </form>    
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Billing Details</ng-template>
+            <div class="container">
+                <div class="part-two-holder w-75 mx-auto my-5">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input matInput type="text" placeholder="First Name" required>
+                            </mat-form-field>        
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput type="text" placeholder="Last Name" required>
+                            </mat-form-field>        
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Company Name</mat-label>
+                                <input matInput type="text" placeholder="Company Name" required>
+                            </mat-form-field>        
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Country</mat-label>
+                                <input matInput type="text" placeholder="Country" required>
+                            </mat-form-field>        
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>City</mat-label>
+                                <input matInput type="text" placeholder="City" required>
+                            </mat-form-field>        
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Postal Code</mat-label>
+                                <input matInput type="number" placeholder="Postal Code" required>
+                            </mat-form-field>        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Address</mat-label>
+                                <input matInput type="text" placeholder="Address" required>
+                            </mat-form-field>        
+                        </div>    
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Email Address</mat-label>
+                                <input matInput type="email" placeholder="Email Address" required>
+                            </mat-form-field>        
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                <mat-label>Phone (Optional)</mat-label>
+                                <input matInput type="number" placeholder="Phone (Optional)" >
+                            </mat-form-field>        
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <p class="mb-0">
+                                <a [routerLink]="['/auth/signup']" class="base-color font-weight-bold">
+                                    Create an Account?
+                                </a>
+                            </p>
+                        </div>    
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button mat-button matStepperPrevious class="btn base-color rounded-pill py-2 px-5 border-base hvr-skew">
+                            Back
+                        </button>    
+                        <button mat-button matStepperNext class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
+                            Next
+                        </button>    
+                    </div>            
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Payment</ng-template>
+            <div class="container">
+                <div class="payment-holder mx-auto my-5">
+                    <div class="row">
+                        <div class="col-md-7 order-holder border-right">
+                            <h3 class="base-color">Your Order</h3>
+                            <div class="row py-3 d-flex align-items-center justify-content-center">
+                                <div class="col-md-6 col-6 mb-2 d-flex align-items-center justify-content-between">
+                                    <img src="../../../assets/images/PNG content/Layer 7.png" class="rounded-lg w-75 p-2" alt="">
+                                    <h4 class="font-weight-bold product-name">Product Name Here</h4>
+                                </div>
+                                <div class="col-md-6 col-6 mb-2 font-weight-bold d-flex align-items-start justify-content-around">
+                                    <span class="p-2 text-muted border rounded-lg">1</span>
+                                    <p class="text-muted">28.99 SAR</p>
+                                </div>
+                            </div>
+                            <div class="row py-3 d-flex align-items-center justify-content-center">
+                                <div class="col-md-6 col-6 mb-2 d-flex align-items-center justify-content-between">
+                                    <img src="../../../assets/images/PNG content/Layer 7.png" class="rounded-lg w-75 p-2" alt="">
+                                    <h4 class="font-weight-bold product-name">Product Name Here</h4>
+                                </div>
+                                <div class="col-md-6 col-6 mb-2 font-weight-bold d-flex align-items-start justify-content-around">
+                                    <span class="p-2 text-muted border rounded-lg">1</span>
+                                    <p class="text-muted">28.99 SAR</p>
+                                </div>
+                            </div>
+
+                            <div class="row flex-column px-5">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="font-weight-bold text-muted">Shipping Charge</h4>
+                                    <h4 class="font-weight-bold text-muted">5.00 SAR</h4>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="font-weight-bold text-muted">VAT 15%</h4>
+                                    <h4 class="font-weight-bold text-muted">13.045 SAR</h4>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="text-black">VAT 15%</h4>
+                                    <h4 class="font-weight-bold text-black">13.045 SAR</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <form action="">
+                                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                                    <mat-button-toggle value="mastercard">
+                                        <img src="../../../assets/images/Icons/mastercard.png" alt="">
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value="visa">
+                                        <img src="../../../assets/images/Icons/visa.png" alt="">
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value="paypal">
+                                        <img src="../../../assets/images/Icons/paypal.png" alt="">
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value="mada">
+                                        <img src="../../../assets/images/Icons/مدي.png" alt="">
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value="stc">
+                                        <img src="../../../assets/images/Icons/stcpay.png" alt="">
+                                    </mat-button-toggle>
+                                </mat-button-toggle-group>
+                                <mat-form-field class="d-block w-75 mt-4 mx-auto rounded-pill" appearance="outline">
+                                    <mat-label>Name on card</mat-label>
+                                    <input matInput type="text" placeholder="Client name" required>
+                                </mat-form-field>
+                                <mat-form-field class="d-block w-75 mx-auto rounded-pill" appearance="outline">
+                                    <mat-label>Card Number</mat-label>
+                                    <input matInput type="number" placeholder="Card Number" required>
+                                </mat-form-field>   
+                                <div class="row w-75 mx-auto">
+                                    <div class="col-6 pl-0">
+                                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                            <mat-label>Expire Date</mat-label>
+                                            <input matInput type="date" placeholder="Expire Date" required>
+                                        </mat-form-field>           
+                                    </div>
+                                    <div class="col-6 pr-0">
+                                        <mat-form-field class="d-block rounded-pill" appearance="outline">
+                                            <mat-label>CVV</mat-label>
+                                            <input matInput type="text" placeholder="eg.123" required>
+                                        </mat-form-field>           
+                                    </div>
+                                </div>
+                                <div class="btn-holder text-center">
+                                    <button mat-button class="btn d-block w-75 mx-auto text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
+                                        Pay 254.84 SAR
+                                    </button>                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+        <div>
+            <button mat-button matStepperPrevious class="btn base-color rounded-pill py-2 px-5 border-base hvr-skew">
+                Back
+            </button>    
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+  

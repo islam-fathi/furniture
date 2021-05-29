@@ -23,6 +23,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 const routes =[
@@ -76,6 +77,11 @@ const routes =[
   resolve: {
     cart: CartResolverService
   },
+  canActivate: [UserAuthGuard]
+},
+{
+  path: 'checkout',
+  component: CheckoutComponent,
   canActivate: [UserAuthGuard]
 },
 {

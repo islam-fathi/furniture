@@ -1,0 +1,40 @@
+::ng-deep .mat-tab-labels, ::ng-deep .mat-horizontal-stepper-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px #ccc;
+    padding: 5px;
+}
+
+::ng-deep .mat-tab-labels .mat-tab-label, ::ng-deep .mat-step-header{
+    border-radius: 30px;
+}
+
+::ng-deep .mat-step-header[aria-selected="true"]{
+    background: var(--base-color);
+    opacity: 1;
+}
+
+::ng-deep .mat-step-header[aria-selected="true"] .mat-step-label-active{
+    color: #fff !important;
+}
+
+::ng-deep .mat-tab-header{
+    height: 75px;
+    border-bottom: 0 !important;
+}
+
+::ng-deep .mat-stepper-horizontal-line{
+    display: none;
+}
+
+.order-holder img{
+    width: 100px !important;
+}
+
+::ng-deep .order-holder h3{
+    font-size: 1.5rem;
+}

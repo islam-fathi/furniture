@@ -1,0 +1,9 @@
+form{
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+form textarea{
+    height: 165px !important;
+}
