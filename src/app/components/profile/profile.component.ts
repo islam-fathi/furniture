@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  typesOfAction: string[] = ['My Orders', 'Tracking Order', 'My Favourite List', 'Edit Account'];
+
+  showPass = true;
   constructor() { }
 
   ngOnInit(): void {

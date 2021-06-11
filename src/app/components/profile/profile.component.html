@@ -1,1 +1,81 @@
-<p>profile works!</p>
+<div class="profile py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-card p-4">
+          <div class="profile-img position-relative rounded-circle p-2">
+            <img src="../../../assets/images/PNG content/profile-pic.png" alt="">
+            <form action="">
+              <input type="file" class="d-none" name="profile-pic" id="profile-pic">
+              <label for="profile-pic">
+                <mat-icon matTooltip="Change profile picture"
+                aria-hidden="false" color="primary" aria-label="Example camera_enhance icon">
+                  camera_enhance
+                </mat-icon>
+              </label>
+            </form>
+          </div>
+          <mat-selection-list #action [multiple]="false">
+            <mat-list-option *ngFor="let action of typesOfAction" [value]="action">
+              {{action}}
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </div>
+      <div class="col-md-8">
+          <div class="content p-4">
+            <div class="title d-flex align-items-center justify-content-between">
+              <h3 class="base-color font-weight-bold m-0">
+                Edit Account
+              </h3>
+              <mat-icon color="primary">edit</mat-icon>  
+            </div>
+            <form action="">
+              <div class="d-flex align-items-center justify-content-start">
+                <h4 class="font-weight-bold mb-0 mr-2">
+                  Name:
+                </h4>
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" value="Abdullah Ashraf">
+                </mat-form-field>                
+              </div>
+
+              <div class="d-flex align-items-center justify-content-start">
+                <h4 class="font-weight-bold mb-0 mr-2">
+                  E-Mail:
+                </h4>
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" value="Abdullah.Ashraf@gmail.com">
+                </mat-form-field>                
+              </div>
+
+              <div class="d-flex align-items-center justify-content-start">
+                <h4 class="font-weight-bold mb-0 mr-2">
+                  Mobile Number:
+                </h4>
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" value="002 01234567890">
+                </mat-form-field>                
+              </div>
+
+              <div class="d-flex align-items-center justify-content-start">
+                <h4 class="font-weight-bold mb-0 mr-2">
+                  Password:
+                </h4>
+                <mat-form-field class="example-form-field">
+                  <input class="rounded-pill form-control m-auto" 
+                  matInput id="password" [type]="showPass ? 'password': 'text'"
+                  name="password" type="text" value="002 01234567890" required>
+                  <button type="button" mat-icon-button matSuffix (click)="showPass = !showPass"
+                  [attr.aria-label]="'Hide password'">
+                      <mat-icon>{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+              </mat-form-field>                
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>   

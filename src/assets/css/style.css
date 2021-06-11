@@ -401,7 +401,7 @@ form.newsletter input {
     overflow-x: hidden;
 }
 
-.cart-items-holder::-webkit-scrollbar {
+.cart-items-holder::-webkit-scrollbar, ::ng-deep #mat-menu-panel-0::-webkit-scrollbar {
     background: #82413778;
     width: 10px;
     border-radius: 10px;
@@ -411,7 +411,7 @@ form.newsletter input {
     -o-border-radius: 10px;
 }
 
-.cart-items-holder::-webkit-scrollbar-thumb {
+.cart-items-holder::-webkit-scrollbar-thumb, ::ng-deep #mat-menu-panel-0::-webkit-scrollbar-thumb {
     background-color: var(--base-color);
     width: 10px;
     border-radius: 10px;

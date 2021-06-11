@@ -34,25 +34,102 @@
                                     </a>
                                 </button>
                                 <mat-menu #cart="matMenu" id="cart-dropdown">
-                                    <button mat-menu-item class="d-flex align-items-center justify-content-between">
-                                        <img src="../../../assets/images/PNG content/chair.png" 
-                                        class="rounded-lg" alt="">
-                                        <span>Product 1</span>
-                                    </button>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h4 class="text-dark">Total (9 Items)</h4>
+                                        <h4 class="base-color font-weight-bold">7,123.99 SAR</h4>
+                                    </div>
+                                    <p class="text-left"><a href="" class="base-color font-weight-bold">Clear All</a>                                    </p>
+                                    <div class="cart-products">
+                                        <div class="cart-item-holder position-relative">
+                                            <div class="cart-item position-relative" [routerLink]="['/product-details']">
+                                                <a [routerLink]="['/product-details']"  mat-menu-item class="d-flex h-100 p-0 align-items-center justify-content-between">
+                                                    <img src="../../../assets/images/PNG content/7.png" 
+                                                    class="rounded-lg h-100" alt="">
+                                                    <div class="cart-item-info px-3">
+                                                        <div class="d-flex w-100 pt-3 align-items-center justify-content-between">
+                                                            <p class="text-dark m-0">Cyrusshare</p>
+                                                            <p class="base-color m-0 font-weight-bold">7,123.99 SAR</p>
+                                                        </div>
+                                                            <p class="m-0 pb-3">Type: 
+                                                                <a [routerLink]="['/category-details']" 
+                                                                class="small text-muted font-weight-bold">
+                                                                SAVA DECK300 MOUNTAIN
+                                                            </a>
+                                                        </p>        
+                                                    </div>
+                                                </a>
+                                                <a class="position-absolute">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </a>   
+                                            </div>    
+                                        </div>
+                                        <div class="cart-item-holder position-relative">
+                                            <div class="cart-item position-relative" [routerLink]="['/product-details']">
+                                                <a [routerLink]="['/product-details']"  mat-menu-item class="d-flex h-100 p-0 align-items-center justify-content-between">
+                                                    <img src="../../../assets/images/PNG content/7.png" 
+                                                    class="rounded-lg h-100" alt="">
+                                                    <div class="cart-item-info px-3">
+                                                        <div class="d-flex w-100 pt-3 align-items-center justify-content-between">
+                                                            <p class="text-dark m-0">Cyrusshare</p>
+                                                            <p class="base-color m-0 font-weight-bold">7,123.99 SAR</p>
+                                                        </div>
+                                                            <p class="m-0 pb-3">Type: 
+                                                                <a [routerLink]="['/category-details']" 
+                                                                class="small text-muted font-weight-bold">
+                                                                SAVA DECK300 MOUNTAIN
+                                                            </a>
+                                                        </p>        
+                                                    </div>
+                                                </a>
+                                                <a class="position-absolute">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </a>   
+                                            </div>    
+                                        </div>
+                                        <div class="cart-item-holder position-relative">
+                                            <div class="cart-item position-relative" [routerLink]="['/product-details']">
+                                                <a [routerLink]="['/product-details']"  mat-menu-item class="d-flex h-100 p-0 align-items-center justify-content-between">
+                                                    <img src="../../../assets/images/PNG content/7.png" 
+                                                    class="rounded-lg h-100" alt="">
+                                                    <div class="cart-item-info px-3">
+                                                        <div class="d-flex w-100 pt-3 align-items-center justify-content-between">
+                                                            <p class="text-dark m-0">Cyrusshare</p>
+                                                            <p class="base-color m-0 font-weight-bold">7,123.99 SAR</p>
+                                                        </div>
+                                                            <p class="m-0 pb-3">Type: 
+                                                                <a [routerLink]="['/category-details']" 
+                                                                class="small text-muted font-weight-bold">
+                                                                SAVA DECK300 MOUNTAIN
+                                                            </a>
+                                                        </p>        
+                                                    </div>
+                                                </a>
+                                                <a class="position-absolute">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </a>   
+                                            </div>    
+                                        </div>    
+                                    </div>
                                     <button mat-menu-item>
-                                        <a routerLink="/cart" class="btn d-block mw-100 text-white rounded-pill py-2 px-2 base-bg hover-invers
+                                        <a mat-button routerLink="/cart" class="btn view-cart d-block w-100 px-0 border-base base-color py-2 px-2 bg-white hover-invers
                                         small-txt">
                                             View Cart
                                         </a>            
                                     </button>
+                                    <button mat-menu-item>
+                                        <a mat-button routerLink="/checkout" class="btn checkout d-block w-100 px-0 text-white py-2 px-2 base-bg hover-invers
+                                        small-txt">
+                                            Checkout
+                                        </a>            
+                                    </button>
                                 </mat-menu>
                             </li>
-                            <li class="nav-item active mr-2">
+                            <li class="nav-item base-color mr-2">
                                 <a routerLink="/auth/login" mat-button>
                                 Login
                                 </a>
                             </li>
-                            <li class="nav-item active mr-2">
+                            <li class="nav-item base-color mr-2">
                                 <a routerLink="/auth/signup" mat-button>
                                     Register
                                 </a>
@@ -62,9 +139,9 @@
                                     <img src="../assets/images/avatar.jpg" class="rounded-circle" width="35px" height="35px" alt="">
                                 </button>
                                 <mat-menu #menu="matMenu">
-                                    <button mat-menu-item>
+                                    <a mat-menu-item>
                                         <span [routerLink]="['/profile']">Your Profile</span>
-                                    </button>
+                                    </a>
                                     <button mat-menu-item>
                                         <span>Account Setting</span>
                                     </button>

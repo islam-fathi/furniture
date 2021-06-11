@@ -21,15 +21,15 @@ export class AuthService {
   ) {
   }
 
-  _registerUrl = `https://furniture-v1.herokuapp.com/lamaderas/v1/ADM/Admin/register`;
-  _loginUrl = `https://furniture-v1.herokuapp.com/lamaderas/v1/ADM/Admin/login`;
-  _userUrl = `http://localhost:4200/auth/current-user`;
-  _profileUrl = `http://localhost:4200/profile`;
-  private _usersURL = `http://localhost:4200/auth/system-users`;
-  private _userDataURL = `http://localhost:4200/auth/user-main-data`;
+  _registerUrl = `https://furniture-v1.herokuapp.com/lamaderas/v1/User/register`;
+  _loginUrl = `https://furniture-v1.herokuapp.com​/lamaderas​/v1​/User/login`;
+  _userUrl = ``;
+  _profileUrl = `https://furniture-v1.herokuapp.com​/lamaderas/v1/User/profile`;
+  private _usersURL = ``;
+  private _userDataURL = ``;
 
-  private imageChangeUrl = `http://localhost:4200/profile/userprofile/changeprofileimage`;
-  private newImageUrl = `http://localhost:4200/profile/userprofile/setprofileimage`;
+  private imageChangeUrl = `https://furniture-v1.herokuapp.com​/lamaderas/v1/User/changeImage`;
+  private newImageUrl = ``;
   private contactUrl = `http://localhost:4200/contacts/new-mail`;
   errorsHandler = new ErrorHandler();
   public username: string;
@@ -147,6 +147,7 @@ export class AuthService {
 
   isLoggedIn() {
     return !!localStorage.getItem("token");
+    console.log(Response)
   }
 
   getToken() {

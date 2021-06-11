@@ -58,10 +58,10 @@ const routes =[
 {
   path: 'profile',
   component: ProfileComponent,
-  resolve: {
-    profile: ProfileResolverService
-  },
-  canActivate: [UserAuthGuard]
+  // resolve: {
+  //   profile: ProfileResolverService
+  // },
+  // canActivate: [UserAuthGuard]
 },
 {
   path: 'orders',
@@ -74,15 +74,15 @@ const routes =[
 {
   path: 'cart',
   component: CartComponent,
-  resolve: {
-    cart: CartResolverService
-  },
-  canActivate: [UserAuthGuard]
+  // resolve: {
+  //   cart: CartResolverService
+  // },
+  // canActivate: [UserAuthGuard]
 },
 {
   path: 'checkout',
   component: CheckoutComponent,
-  canActivate: [UserAuthGuard]
+  // canActivate: [UserAuthGuard]
 },
 {
   path: 'auth',
