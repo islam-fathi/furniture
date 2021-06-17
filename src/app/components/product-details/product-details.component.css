@@ -1,0 +1,96 @@
+::ng-deep .product-images-slider .slick-next{
+    right: 0 !important;
+    z-index: 1;
+    background-color: var(--base-color);
+
+}
+::ng-deep .product-images-slider .slick-prev{
+    left: 0 !important;
+    background-color: var(--base-color);
+    z-index: 1;
+}
+
+::ng-deep i{
+    left: calc( 50% - 28px);
+    top: calc( 50% - 28px);
+    cursor: pointer;
+}
+
+::ng-deep .color .mat-button-toggle {
+    white-space: nowrap;
+    position: relative;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 11px;
+}
+
+::ng-deep .mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard{
+border: 0;
+}
+
+::ng-deep .mat-button-toggle-checked::after{
+    position: absolute;
+    content: " ";
+    bottom: -1rem;
+    width: 30px;
+    height: 2px;
+    background-color: var(--base-color);
+}
+.mat-button-toggle-checked::after {
+    position: absolute;
+    content: " ";
+    bottom: -10px;
+    width: 30px;
+    height: 3px;
+    background-color: var(--base-color) !important;
+    left: 0;
+}
+
+
+::ng-deep #mat-button-toggle-1{
+    background-color: var(--base-color) !important;
+}
+
+::ng-deep #mat-button-toggle-2{
+    background-color: green !important;
+}
+
+::ng-deep #mat-button-toggle-3{
+    background-color: yellow !important;
+}
+
+
+::ng-deep .add-to-cart{
+    border: 2px solid var(--base-color);
+}
+::ng-deep .mat-button-toggle-button{
+    height: 100% !important;
+}
+
+::ng-deep .size .mat-button-wrapper{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+::ng-deep .finish .mat-button-wrapper{
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+::ng-deep table h3{
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 0 !important;
+}
+
+::ng-deep table td{
+    font-size: 1.3rem !important;
+}

@@ -24,6 +24,7 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
 
 
 const routes =[
@@ -62,6 +63,10 @@ const routes =[
   //   profile: ProfileResolverService
   // },
   // canActivate: [UserAuthGuard]
+},
+{
+  path: 'app-order-your-design',
+  component: OrderYourDesignComponent
 },
 {
   path: 'orders',
@@ -105,6 +110,11 @@ const routes =[
   }
 
 },
+{
+  path: 'product-details',
+  component: ProductDetailsComponent,
+},
+
 {
   path: 'products/:id',
   component: ProductDetailsComponent
