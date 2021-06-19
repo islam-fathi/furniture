@@ -1,0 +1,11 @@
+::ng-deep #winter-sale-slider .slick-next,
+::ng-deep #winter-sale-slider .slick-prev {
+    background-color: var(--base-color) !important;
+    color: #fff !important;
+    top: 50% !important;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

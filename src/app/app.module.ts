@@ -45,6 +45,10 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { IncrementInputComponent } from './components/increment-input/increment-input.component';
 import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
 import { ProductCardFullWidthComponent } from './components/product-card-full-width/product-card-full-width.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CategoriesCarouselComponent } from './components/categories-carousel/categories-carousel.component';
+import { WinterSaleCarouselComponent } from './components/winter-sale-carousel/winter-sale-carousel.component';
+import { ProductDetailsCarouselComponent } from './components/product-details-carousel/product-details-carousel.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -78,7 +82,10 @@ import { ProductCardFullWidthComponent } from './components/product-card-full-wi
     CheckoutComponent,
     IncrementInputComponent,
     OrderYourDesignComponent,
-    ProductCardFullWidthComponent
+    ProductCardFullWidthComponent,
+    CategoriesCarouselComponent,
+    WinterSaleCarouselComponent,
+    ProductDetailsCarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +97,7 @@ import { ProductCardFullWidthComponent } from './components/product-card-full-wi
     ReactiveFormsModule,
     FilesModule,
     HttpClientModule,
+    SlickCarouselModule,
     CarouselModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),

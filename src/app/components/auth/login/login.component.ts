@@ -32,9 +32,10 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin() {
-    this.authService.login(this.authCredentialsDto.value).subscribe(
+    this.authService.login({data:{loginData:this.authCredentialsDto.value}}).subscribe(
       res => {
-        localStorage.setItem("token", res.accessToken);
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
         this.authService.prepareUserData();
         this.router.navigate([`/home`]);
       },

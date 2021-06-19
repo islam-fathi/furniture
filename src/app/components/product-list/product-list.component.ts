@@ -19,8 +19,6 @@ export class ProductListComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               public productService: ProductService,
-              private snackBar: MatSnackBar,
-              private dialog: MatDialog,
               public authService: AuthService) {
     if (route.snapshot.data.products) {
       this.products = route.snapshot.data.products;

@@ -1,0 +1,12 @@
+<ngx-slick-carousel id="product-details-slider" class="carousel mb-3" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide position-relative">
+        <img src="{{ slide.img }}" alt="" class="h-100" width="100%">
+</div>
+</ngx-slick-carousel>
+

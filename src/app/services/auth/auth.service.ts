@@ -127,6 +127,7 @@ export class AuthService {
 
   login(user: any): Observable<any> {
     try {
+      console.log(user);
       return this.http.post<any>(this._loginUrl, user);
     } catch (err) {
       this.errorsHandler.handleError(err);

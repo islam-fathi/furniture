@@ -1,0 +1,17 @@
+<ngx-slick-carousel id="categories-slider" class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide position-relative">
+    <a [routerLink]="['/category-details']">
+        <img src="{{ slide.img }}" alt="" class="h-100" width="100%">
+    </a>
+    <h3 class="position-absolute text-white hvr-float">
+        <a [routerLink]="['/category-details']"  class="hover-base-color text-white">Category Name</a>
+    </h3>
+</div>
+</ngx-slick-carousel>
+
