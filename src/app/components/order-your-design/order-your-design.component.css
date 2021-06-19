@@ -1,0 +1,52 @@
+::ng-deep .mat-tab-labels, ::ng-deep .mat-horizontal-stepper-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px #ccc;
+    padding: 5px;
+}
+
+::ng-deep .mat-tab-labels .mat-tab-label, ::ng-deep .mat-step-header{
+    border-radius: 30px;
+}
+
+::ng-deep .mat-step-header[aria-selected="true"]{
+    background: var(--base-color);
+    opacity: 1;
+}
+
+::ng-deep .mat-step-header[aria-selected="true"] .mat-step-label-active{
+    color: #fff !important;
+}
+
+::ng-deep .mat-tab-header{
+    height: 75px;
+    border-bottom: 0 !important;
+}
+
+::ng-deep .mat-stepper-horizontal-line{
+    display: none;
+}
+
+
+::ng-deep h3.order-yours-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content{
+    padding: 0 !important;
+}
+
+::ng-deep .mat-button-toggle-appearance-standard{
+    border: 2px solid;
+    margin: 5px;
+
+}
+
+::ng-deep .mat-button-toggle-group.mat-button-toggle-group-appearance-standard{
+border: 0 !important;
+}

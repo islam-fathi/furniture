@@ -3,12 +3,13 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ErrorHandler } from 'src/app/shared/error-handler';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private url = 'http://localhost:3000/products';
+  private url = environment.apiUrl+environment.appMain+'/prod/Product/getProductList';
   private errorHandler: ErrorHandler = new ErrorHandler();
 
   constructor(private http: HttpClient) {}

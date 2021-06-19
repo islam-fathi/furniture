@@ -43,6 +43,8 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { IncrementInputComponent } from './components/increment-input/increment-input.component';
+import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
+import { ProductCardFullWidthComponent } from './components/product-card-full-width/product-card-full-width.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -75,6 +77,8 @@ import { IncrementInputComponent } from './components/increment-input/increment-
     ShopComponent,
     CheckoutComponent,
     IncrementInputComponent,
+    OrderYourDesignComponent,
+    ProductCardFullWidthComponent
   ],
   imports: [
     BrowserModule,

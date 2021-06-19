@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  apiUrl: 'https://furniture-v1.herokuapp.com',
+  appMain: '/lamaderas/v1',
+  production: false,
+  languages:{'عربي':1 ,'English':2}
 };
 
 /*

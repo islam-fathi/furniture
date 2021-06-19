@@ -45,6 +45,7 @@ a.nav-link {
     -ms-transition: .3s all;
     -o-transition: .3s all;
     font-size: 1rem;
+    
 }
 
 a.nav-link:hover {

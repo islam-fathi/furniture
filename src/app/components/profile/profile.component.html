@@ -1,5 +1,4 @@
-<div class="profile py-5">
-  <div class="container">
+  <div class="container py-5">
     <div class="row">
       <div class="col-md-4">
         <div class="profile-card p-4">
@@ -15,14 +14,76 @@
               </label>
             </form>
           </div>
-          <mat-selection-list #action [multiple]="false">
-            <mat-list-option *ngFor="let action of typesOfAction" [value]="action">
-              {{action}}
-            </mat-list-option>
-          </mat-selection-list>
+          <ul class="nav nav-tabs flex-column" id="profile-tabs" role="tablist">
+            <li class="nav-item text-center" role="presentation">
+              <a href="#orders" class="active nav-link" aria-controls="orders" role="tab" data-toggle="tab">
+                My Orders
+              </a>
+            </li>
+            <li class="nav-item text-center" role="presentation">
+              <a href="#tracking" class="nav-link" aria-controls="tracking" role="tab" data-toggle="tab">
+                Tracking Order
+              </a>
+            </li>
+            <li class="nav-item text-center" role="presentation">
+              <a href="#favourite" class="nav-link" aria-controls="favourite" role="tab" data-toggle="tab">
+                My Favourite List
+              </a>
+            </li>
+            <li class="nav-item text-center" role="presentation">
+              <a href="#edit" class="nav-link" aria-controls="edit" role="tab" data-toggle="tab">
+                Edit Account
+              </a>
+            </li>       
+          </ul>
         </div>
       </div>
       <div class="col-md-8">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="orders">
+            <app-product-card-full-width></app-product-card-full-width>
+            <app-product-card-full-width></app-product-card-full-width>
+            <app-product-card-full-width></app-product-card-full-width>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tracking">
+            <mat-horizontal-stepper linear #stepper>
+              <mat-step>
+                <form>
+                  <ng-template matStepLabel>Order Placed</ng-template>
+                </form>
+              </mat-step>
+              <mat-step>
+                <form>
+                  <ng-template matStepLabel>Order Confirmed</ng-template>
+                </form>
+              </mat-step>
+              <mat-step >
+                <form>
+                  <ng-template matStepLabel>Order Proceed</ng-template>
+                </form>
+              </mat-step>
+              <mat-step>
+                <ng-template matStepLabel>Order Delivered</ng-template>
+              </mat-step>
+            </mat-horizontal-stepper>
+                      </div>
+          <div role="tabpanel" class="tab-pane" id="favourite">
+            <div class="row justify-content-around">
+              <div class="col-md-5">
+                <app-product-card></app-product-card>
+              </div>
+              <div class="col-md-5">
+                <app-product-card></app-product-card>
+              </div>
+              <div class="col-md-5">
+                <app-product-card></app-product-card>
+              </div>
+              <div class="col-md-5">
+                <app-product-card></app-product-card>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="edit">
           <div class="content p-4">
             <div class="title d-flex align-items-center justify-content-between">
               <h3 class="base-color font-weight-bold m-0">
@@ -30,7 +91,7 @@
               </h3>
               <mat-icon color="primary">edit</mat-icon>  
             </div>
-            <form action="">
+            <form action="" id="edit-account-form">
               <div class="d-flex align-items-center justify-content-start">
                 <h4 class="font-weight-bold mb-0 mr-2">
                   Name:
@@ -75,7 +136,7 @@
 
             </form>
           </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>   

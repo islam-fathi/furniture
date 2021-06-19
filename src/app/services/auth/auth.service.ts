@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from '../cart/cart.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -21,18 +22,18 @@ export class AuthService {
   ) {
   }
 
-  _registerUrl = `https://furniture-v1.herokuapp.com/lamaderas/v1/User/register`;
-  _loginUrl = `https://furniture-v1.herokuapp.com​/lamaderas​/v1​/User/login`;
+  _registerUrl = environment.apiUrl+environment.appMain+`/Account/register`;
+  _loginUrl =  environment.apiUrl+environment.appMain+`/Account/login`;
   _userUrl = ``;
-  _profileUrl = `https://furniture-v1.herokuapp.com​/lamaderas/v1/User/profile`;
-  private _usersURL = ``;
+  _profileUrl = environment.apiUrl+environment.appMain+`/User/getUserProfile`;
+  // private _usersURL = ``;
   private _userDataURL = ``;
 
-  private imageChangeUrl = `https://furniture-v1.herokuapp.com​/lamaderas/v1/User/changeImage`;
+  private imageChangeUrl = environment.apiUrl+environment.appMain+`/User/changeImage`;
   private newImageUrl = ``;
   private contactUrl = `http://localhost:4200/contacts/new-mail`;
   errorsHandler = new ErrorHandler();
-  public username: string;
+  public email: string;
   public cart: Cart;
   public cartItem: CartItem;
   public profile: Profile;
@@ -49,7 +50,7 @@ export class AuthService {
       });
       this.pUserData().subscribe(uData => {
         this.profile = uData.profile;
-        this.username = `${uData.profile.firstname}
+        this.email = `${uData.profile.firstname}
         ${uData.profile.lastname}`;
       });
     }
@@ -116,13 +117,13 @@ export class AuthService {
     }
   }
 
-  getUsers(): Observable<User[]> {
-    try {
-      return this.http.get<User[]>(this._usersURL);
-    } catch (err) {
-      this.errorsHandler.handleError(err);
-    }
-  }
+  // getUsers(): Observable<User[]> {
+  //   try {
+  //     return this.http.get<User[]>(this._usersURL);
+  //   } catch (err) {
+  //     this.errorsHandler.handleError(err);
+  //   }
+  // }
 
   login(user: any): Observable<any> {
     try {

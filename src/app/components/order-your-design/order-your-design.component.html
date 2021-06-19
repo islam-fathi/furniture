@@ -2,8 +2,8 @@
 <nav aria-label="breadcrumb">
     <div class="container px-0">
         <ol class="breadcrumb bg-white px-0">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+            <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Order Your Design</li>
         </ol>
     </div>
 </nav>
@@ -11,15 +11,104 @@
 
 <div class="order-design-holder">
     <div class="container">
-<!--        <form action="">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3 class="">What's your favourite style?</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est molestiae ipsam perferendis nostrum, voluptate placeat assumenda! Aliquam earum, quasi fuga facere quisquam fugiat accusantium laudantium, rem eaque perferendis, totam explicabo.</p>
+        <mat-horizontal-stepper linear #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Order Yours</ng-template>
+                <div class="row py-4 my-3">
+                    <div class="col-md-4">
+                        <h3 class="order-yours-title">What is your favourite style?</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Earum sint itaque repellendus quidem voluptates inventore nihil 
+                            assumenda dignissimos excepturi possimus. Maxime assumenda temporibus, 
+                            ipsum amet ab libero cupiditate illo minima!
+                        </p>
+                        <div class="d-flex align-items-center justify-content-end mt-md-4">
+                            <button mat-button matStepperNext class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
+                                Next
+                            </button>    
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <mat-button-toggle-group formControlName="firstCtrl" name="fontStyle" aria-label="Font Style" id="styles">
+                            <mat-button-toggle value="Style1" class="border-base">
+                                <img src="../../../assets/images/PNG content/header1.jpg" alt="">
+                                <h4 class="base-color py-3 mb-0 font-weight-bold">Style One</h4>
+                            </mat-button-toggle>
+                            <mat-button-toggle value="Style2" class="border-base">
+                                <img src="../../../assets/images/PNG content/header1.jpg" alt="">
+                                <h4 class="base-color py-3 mb-0 font-weight-bold">Style Two</h4>
+                            </mat-button-toggle>
+                            <mat-button-toggle value="Style3" class="border-base">
+                                <img src="../../../assets/images/PNG content/header1.jpg" alt="">
+                                <h4 class="base-color py-3 mb-0 font-weight-bold">Style Three</h4>
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
                 </div>
-            </div> 
-        </form> -->
-    </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Fill out your address</ng-template>
+                <div class="row py-4 my-3">
+                    <div class="col-md-4">
+                        <h3 class="order-yours-title">Which product would you like to come home to?</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Earum sint itaque repellendus quidem voluptates inventore nihil 
+                            assumenda dignissimos excepturi possimus. Maxime assumenda temporibus, 
+                            ipsum amet ab libero cupiditate illo minima!
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between mt-md-4">
+                            <button mat-button matStepperPrevious class="btn base-color rounded-pill py-2 px-5 border-base hvr-skew">
+                                Back
+                            </button>            
+                            <button mat-button matStepperNext class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
+                                Next
+                            </button>    
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <mat-button-toggle-group formControlName="secondCtrl" name="fontStyle" aria-label="Font Style" id="styles">
+                            <mat-button-toggle value="Style1" class="border-base">
+                                <img src="../../../assets/images/PNG content/1.png" alt="">
+                            </mat-button-toggle>
+                            <mat-button-toggle value="Style2" class="border-base">
+                                <img src="../../../assets/images/PNG content/1.png" alt="">
+                            </mat-button-toggle>
+                            <mat-button-toggle value="Style3" class="border-base">
+                                <img src="../../../assets/images/PNG content/1.png" alt="">
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                        <mat-button-toggle-group formControlName="secondCtrl" name="fontStyle" aria-label="Font Style" id="styles">
+                            <mat-button-toggle value="Style1" class="border-base">
+                                <img src="../../../assets/images/PNG content/1.png" alt="">
+                            </mat-button-toggle>
+                            <mat-button-toggle value="Style2" class="border-base">
+                                <img src="../../../assets/images/PNG content/1.png" alt="">
+                            </mat-button-toggle>
+                            <mat-button-toggle value="Style3" class="border-base">
+                                <img src="../../../assets/images/PNG content/1.png" alt="">
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                        </div>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious class="btn base-color rounded-pill py-2 px-5 border-base hvr-skew">
+                        Back
+                    </button>    
+                <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+                </div>
 </div>
 
 

@@ -1,0 +1,15 @@
+.product-card {
+    border: 1px solid #c1c1c1;
+}
+
+.product-card .small-txt {
+    font-size: 12px;
+}
+
+.most-viewed .product-header img {
+    width: 170px !important;
+    height: 160px;
+    display: block;
+    margin: 0 auto;
+}
+

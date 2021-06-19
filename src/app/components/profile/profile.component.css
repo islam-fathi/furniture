@@ -26,3 +26,38 @@
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper{
     width: 300px;
 }
+
+.nav-tabs>li a{
+    color: #fff !important;
+    cursor: pointer;
+    border: 1px solid var(--base-color) !important;
+    display: block;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background-color: #c1c1c1;
+} 
+
+.nav-tabs>li a.active{
+    color: #fff !important;
+    cursor: pointer;
+    background-color: var(--base-color) !important;
+    border: 1px solid var(--base-color) !important;
+    display: block;
+    padding: 10px;
+    margin-bottom: 1rem;
+} 
+
+.nav-tabs>li.active a{
+    color: #fff !important;
+    display: block;
+    font-size: 1rem;
+} 
+
+::ng-deep #favourite a.mat-button span{
+    color: #fff !important;
+}
+
+::ng-deep #edit-account-form h4{
+    width: 18% !important;
+}
+

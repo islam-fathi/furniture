@@ -77,3 +77,14 @@
     border: 1px solid var(--base-color);
     border-radius: 5px;
 }
+
+
+@media (max-width: 768px){
+    ul.navbar-nav.ml-auto {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    ul.navbar-nav a.nav-link{
+        text-align: start !important;
+    }
+}
