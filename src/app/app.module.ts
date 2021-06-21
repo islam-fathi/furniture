@@ -49,6 +49,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CategoriesCarouselComponent } from './components/categories-carousel/categories-carousel.component';
 import { WinterSaleCarouselComponent } from './components/winter-sale-carousel/winter-sale-carousel.component';
 import { ProductDetailsCarouselComponent } from './components/product-details-carousel/product-details-carousel.component';
+import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -85,7 +86,8 @@ import { ProductDetailsCarouselComponent } from './components/product-details-ca
     ProductCardFullWidthComponent,
     CategoriesCarouselComponent,
     WinterSaleCarouselComponent,
-    ProductDetailsCarouselComponent
+    ProductDetailsCarouselComponent,
+    SignupSuccessfullyComponent
   ],
   imports: [
     BrowserModule,

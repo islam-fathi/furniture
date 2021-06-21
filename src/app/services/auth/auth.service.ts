@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from '../cart/cart.service';
 import { environment } from 'src/environments/environment';
+import { mainFunctions } from 'src/main';
 
 @Injectable({
   providedIn: 'root',
@@ -39,8 +40,9 @@ export class AuthService {
   public profile: Profile;
   public currentUser: User;
 
-  registerUser(registrationInfo): Observable<void> {
-    return this.http.post<void>(this._registerUrl, registrationInfo);
+  registerUser(registrationInfo): Observable<any> {
+    let request = mainFunctions.requestData('customer' , registrationInfo);
+    return this.http.post(this._registerUrl, request);
   }
 
   prepareUserData() {
