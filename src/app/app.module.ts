@@ -31,7 +31,7 @@ import {
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -49,6 +49,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CategoriesCarouselComponent } from './components/categories-carousel/categories-carousel.component';
 import { WinterSaleCarouselComponent } from './components/winter-sale-carousel/winter-sale-carousel.component';
 import { ProductDetailsCarouselComponent } from './components/product-details-carousel/product-details-carousel.component';
+import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -85,7 +88,8 @@ import { ProductDetailsCarouselComponent } from './components/product-details-ca
     ProductCardFullWidthComponent,
     CategoriesCarouselComponent,
     WinterSaleCarouselComponent,
-    ProductDetailsCarouselComponent
+    ProductDetailsCarouselComponent,
+    SignupSuccessfullyComponent
   ],
   imports: [
     BrowserModule,
@@ -105,6 +109,11 @@ import { ProductDetailsCarouselComponent } from './components/product-details-ca
     AccordionModule.forRoot(),
     PaginationModule.forRoot(),
   ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {}

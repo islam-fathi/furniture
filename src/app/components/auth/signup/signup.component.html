@@ -6,37 +6,74 @@
                 class="form-group mb-4 d-block m-auto text-center rounded-pill" 
                 style="width: 75%">
                     <input type="text" class="rounded-pill form-control m-auto" 
-                    placeholder="Email or Username" 
-                    formControlName="username" matInput 
-                    id="username" name="username" 
-                    required>
+                    placeholder="Enter your Name" 
+                    formControlName="custName" matInput 
+                    id="custName" name="custName" 
+                    required
+                    [ngClass]="{ 'is-invalid': submitted && f.custName.errors }">
+                    <mat-error *ngIf="submitted && f.custName.errors && f.custName.errors!.required">
+                        Name is required
+                    </mat-error>
+                    <mat-error *ngIf="submitted && f.custName.errors && f.custName.errors!.minLength">
+                        Length of Name should be more than 8 character
+                    </mat-error>
+                    <mat-error *ngIf="f.custName.errors?.serverError" class="invalid-feedback">
+                        {{ f.custName.errors?.serverError }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" 
                 class="form-group mb-4 d-block m-auto text-center rounded-pill" 
                 style="width: 75%">
-                    <input type="number" class="rounded-pill form-control m-auto" 
-                    placeholder="Enter your mobile number" 
-                    formControlName="mobile" matInput 
-                    id="mobile" name="username" 
-                    required>
+                    <input type="email" class="rounded-pill form-control m-auto" 
+                    placeholder="Enter your email" 
+                    formControlName="custEmail" matInput 
+                    id="custEmail" name="custEmail" 
+                    required
+                    [ngClass]="{ 'is-invalid': submitted && f.custEmail.errors }">
+                    <mat-error *ngIf="submitted && f.custEmail.errors && f.custEmail.errors!.required">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="f.custEmail.errors?.serverError" class="invalid-feedback">
+                        {{ f.custEmail.errors?.serverError }}
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="form-group mb-4 d-block m-auto text-center rounded-pill" 
                 style="width: 75%">
                     <input class="rounded-pill form-control m-auto" 
-                    placeholder="Password" formControlName="password"
-                    matInput id="password" [type]="showPass ? 'password': 'text'"
-                    name="password" type="text" required>
+                    placeholder="Password" formControlName="custPassword"
+                    matInput id="custPassword" [type]="showPass ? 'password': 'text'"
+                    name="custPassword" type="text" required
+                    [ngClass]="{ 'is-invalid': submitted && f.custPassword.errors }">
                     <button type="button" mat-icon-button matSuffix (click)="showPass = !showPass"
                     [attr.aria-label]="'Hide password'">
                         <mat-icon>{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
+                    <mat-error *ngIf="submitted && f.custPassword.errors && f.custPassword.errors!.required">
+                        Password is required
+                    </mat-error>
+                    <mat-error *ngIf="submitted && f.custPassword.errors && f.custPassword.errors!.minLength">
+                        Length of Password should be more than 8 character
+                    </mat-error>
+                    <mat-error *ngIf="f.custPassword.errors?.serverError" class="invalid-feedback">
+                        {{ f.custPassword.errors?.serverError }}
+                    </mat-error>
                 </mat-form-field>    
                 <mat-form-field appearance="outline" class="form-group mb-4 d-block m-auto text-center rounded-pill" 
                 style="width: 75%">
                     <input class="rounded-pill form-control m-auto" 
-                    placeholder="Password" formControlName="password"
-                    matInput id="confirm-password" [type]="showPass ? 'password': 'text'"
-                    name="password" type="text" required>
+                    placeholder="Password" formControlName="confirmCustPassword"
+                    matInput id="confirmCustPassword" [type]="showPass ? 'password': 'text'"
+                    name="confirmCustPassword" type="text" required
+                    [ngClass]="{ 'is-invalid': submitted && f.confirmCustPassword.errors }">
+                    <mat-error *ngIf="submitted && f.confirmCustPassword.errors && f.confirmCustPassword.errors!.required">
+                        Confirm Password is required
+                    </mat-error>
+                    <mat-error *ngIf="submitted && f.confirmCustPassword.errors && f.confirmCustPassword.errors!.notEquivalent">
+                        passwords don't match
+                      </mat-error>
+                    <mat-error *ngIf="f.confirmCustPassword.errors?.serverError" class="invalid-feedback">
+                        {{ f.confirmCustPassword.errors?.serverError }}
+                    </mat-error>
                 </mat-form-field>    
 
                 <div class="submit-holder w-75 m-auto text-center">
@@ -48,7 +85,7 @@
         </div>
 
 
-<ng-template #invalidCredentials>
+<!-- <ng-template #invalidCredentials>
     <div class="modal-header">
         <h4 class="modal-title pull-left">
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -66,4 +103,4 @@
             Try Again!
         </button>
     </div>
-</ng-template>
+</ng-template> -->
