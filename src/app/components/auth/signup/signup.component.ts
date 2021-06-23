@@ -55,7 +55,7 @@ export class SignupComponent implements OnInit {
     if(this.registrationForm.valid)
       this.authService.registerUser(this.registrationForm.value).subscribe(
         (result) =>{
-          if(result.result.status == '300')
+          if(result.result.status == '200')
           {
             this.router.navigate(['/auth/signup/successfully']);
           }
