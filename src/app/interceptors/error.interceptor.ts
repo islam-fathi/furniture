@@ -28,6 +28,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 else if(event.body.result.status != '200' && typeof event.body.result.resultMsg != "undefined")
                     this.allertService.error(event.body.result.resultMsg);
                 
+                
             }
         }),
         catchError((error: HttpErrorResponse) => {
