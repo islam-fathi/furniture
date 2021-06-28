@@ -25,6 +25,7 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
+import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
 
 
 const routes =[
@@ -99,6 +100,10 @@ const routes =[
     {
       path: 'signup',
       component: SignupComponent
+    },
+    {
+      path: 'signup/successfully',
+      component: SignupSuccessfullyComponent
     }
   ]
 },

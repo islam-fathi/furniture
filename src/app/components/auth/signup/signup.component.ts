@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert/alert.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { mainFunctions } from 'src/main';
 
 @Component({
   selector: 'app-signup',
@@ -11,64 +13,67 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class SignupComponent implements OnInit {
 
   registrationForm: FormGroup;
+  submitted = false;
   showPass = true;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authService: AuthService,
+    private alertService: AlertService,
     private router: Router
-  ) {
-  }
-
-  get userName() {
-    return this.registrationForm.get("authCredentialsDto").get("custName");
-  }
-
-  get password() {
-    return this.registrationForm.get("authCredentialsDto").get("custPassword");
-  }
+  ) {}
 
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/profile']);
     }
-    this.registrationForm = this.fb.group({
-      authCredentialsDto: new FormGroup({
-        email: new FormControl(null, Validators.required),
-        password: new FormControl(null)
-      }),
-      createProfileDto: new FormGroup({
-        email: new FormControl(null, Validators.required),
-        name: new FormControl(null, Validators.required),
-        password: new FormControl(null, Validators.required),
-        confirmPassword: new FormControl(null, Validators.required)
-      })
-    });
+    this.registrationForm = this.formBuilder.group({
+      custPassword: ['', [Validators.required, Validators.minLength(8)]],
+      confirmCustPassword: ['', [Validators.required]],
+      custEmail: ['', [Validators.required]],
+      custName: ['', [Validators.required, Validators.minLength(8)]],
+    }
+    ,{validator: this.checkIfMatchingPasswords('custPassword', 'confirmCustPassword')});
+  }
+  get f() { return this.registrationForm.controls; }
+
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+          passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({notEquivalent: true})
+      }
+      else {
+          return passwordConfirmationInput.setErrors(null);
+      }
+    }
   }
 
   register() {
-    const userCredentials = {
-      custName: this.userName.value,
-      custPassword: this.password.value
-    };
-    this.authService
-      .registerUser(this.registrationForm.value)
-      .subscribe(() => {
-        this.authService.login(userCredentials).subscribe(
-          resToken => {
-            localStorage.setItem("token", resToken.data.token);
-            this.authService.prepareUserData();
-            this.authService.getCurrentUser().subscribe(
-              resUser => {
-                this.authService.currentUser = resUser;
+    this.submitted = true;
+    if(this.registrationForm.valid)
+      this.authService.registerUser(this.registrationForm.value).subscribe(
+        (result) =>{
+          if(result.result.status == '200')
+          {
+            this.router.navigate(['/auth/signup/successfully']);
+          }
+          else if(typeof result.result.errors != "undefined") 
+          {
+            let validationErrors = mainFunctions.getError(result.result.errors);
+            Object.keys(validationErrors).forEach(prop => {
+              const formControl = this.registrationForm.get(prop);
+              if (formControl) {
+                // activate the error message
+                formControl.setErrors({
+                  serverError: validationErrors[prop as any]
+                });
               }
-            );
-            this.router.navigate([`/profile`]);
-          },
-          error => console.log(error)
-        );
-      });
-
+            });
+          }
+        }
+      );
   }
 
 }
