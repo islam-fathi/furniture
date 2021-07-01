@@ -22,7 +22,6 @@ platformBrowserDynamic().bootstrapModule(AppModule)
       else
         request = {data:{lngNo:mainFunctions.getCurrentLanguage()}}; 
   
-      console.log(request);
       return request;
     }
   

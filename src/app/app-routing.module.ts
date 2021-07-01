@@ -26,7 +26,11 @@ import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
 import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
+<<<<<<< HEAD
 import { FiltersComponent } from './components/filters/filters.component';
+=======
+import { LogOutComponent } from './components/auth/logout/log-out/log-out.component';
+>>>>>>> 1e7e89cc25b27267c63a6afd0368947048787c0f
 
 
 const routes =[
@@ -102,6 +106,10 @@ const routes =[
     {
       path: 'login',
       component: LoginComponent
+    },
+    {
+      path: 'logout',
+      component: LogOutComponent,
     },
     {
       path: 'signup',

@@ -52,8 +52,13 @@ import { ProductDetailsCarouselComponent } from './components/product-details-ca
 import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+<<<<<<< HEAD
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FiltersComponent } from './components/filters/filters.component';
+=======
+import { DataSharingService } from './services/data-sharing-service.service';
+import { LogOutComponent } from './components/auth/logout/log-out/log-out.component';
+>>>>>>> 1e7e89cc25b27267c63a6afd0368947048787c0f
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -92,7 +97,11 @@ import { FiltersComponent } from './components/filters/filters.component';
     WinterSaleCarouselComponent,
     ProductDetailsCarouselComponent,
     SignupSuccessfullyComponent,
+<<<<<<< HEAD
     FiltersComponent
+=======
+    LogOutComponent
+>>>>>>> 1e7e89cc25b27267c63a6afd0368947048787c0f
   ],
   imports: [
     BrowserModule,
@@ -115,7 +124,11 @@ import { FiltersComponent } from './components/filters/filters.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+<<<<<<< HEAD
     {provide: LocationStrategy, useClass: HashLocationStrategy}
+=======
+    DataSharingService
+>>>>>>> 1e7e89cc25b27267c63a6afd0368947048787c0f
 ],
 
   bootstrap: [AppComponent],
