@@ -26,6 +26,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
 import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 
 const routes =[
@@ -88,6 +89,11 @@ const routes =[
 {
   path: 'checkout',
   component: CheckoutComponent,
+  // canActivate: [UserAuthGuard]
+},
+{
+  path: 'filter',
+  component: FiltersComponent,
   // canActivate: [UserAuthGuard]
 },
 {
@@ -154,7 +160,7 @@ const routes =[
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules, useHash: true} )],
   exports: [RouterModule]
 })
 

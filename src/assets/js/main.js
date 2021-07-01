@@ -61,4 +61,5 @@ $(document).ready(function() {
         $(this).prev(".card-header").find('span').removeClass('base-color')
     });
 
+    
 })

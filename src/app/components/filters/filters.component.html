@@ -1,0 +1,192 @@
+<!-- breadcrumb   -->
+<nav aria-label="breadcrumb">
+    <div class="container px-0">
+        <ol class="breadcrumb bg-white px-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Filter</li>
+        </ol>
+    </div>
+</nav>
+
+
+<div class="filters-holder">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <app-product-card></app-product-card>
+                    </div>
+                    <div class="col-md-4">
+                        <app-product-card></app-product-card>
+                    </div>
+                    <div class="col-md-4">
+                        <app-product-card></app-product-card>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="filters-top mb-3 d-flex align-items-center justify-content-between">
+                    <span class="text-muted">1,200 Products</span>
+                    <div class="icons">
+                        <button mat-button
+                                matTooltip="List View"
+                                matTooltipClass="example-tooltip-red"
+                                aria-label="Button that shows a red tooltip"
+                                class="example-button base-color">
+                                <mat-icon>grid_on</mat-icon>
+                        </button>
+                        <button mat-button
+                                matTooltip="Grid View"
+                                matTooltipClass="example-tooltip-red"
+                                aria-label="Button that shows a red tooltip"
+                                class="example-button base-color">
+                                <mat-icon>list</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="accordion mb-3" id="accordionExample">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent border-0" id="headingOne">
+                            <h2 class="mb-0 border-bottom text-muted" data-toggle="collapse" 
+                            data-target="#collapseOne">
+                                Browse By Category								
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" 
+                        aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p><mat-checkbox formControlName="all">
+                                    <span class="base-color rounded-circle all">All</span> 
+                                    All Products</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="chairs">
+                                    <span class="base-color rounded-circle img">
+                                        <img src="assets/images/PNG content/chair.png" alt="">
+                                    </span> 
+                                    Chiars</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    <span class="base-color rounded-circle img">
+                                        <img src="assets/images/PNG content/chair-ingrid.png" alt="">
+                                    </span> 
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    <span class="base-color rounded-circle img">
+                                        <img src="assets/images/PNG content/chair-ingrid.png" alt="">
+                                    </span> 
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    <span class="base-color rounded-circle img">
+                                        <img src="assets/images/PNG content/chair-ingrid.png" alt="">
+                                    </span> 
+                                    Tables</mat-checkbox>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion" id="accordionExample2">
+                    <div class="card bg-transparent">
+                        <div class="card-header bg-transparent border-0" id="headingTwo">
+                            <h2 class="mb-0 border-bottom text-muted" data-toggle="collapse" 
+                            data-target="#collapseTwo">
+                                Filter products								
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" 
+                        aria-labelledby="headingTwo" data-parent="#accordionExample2">
+                            <div class="card-body mb-3">
+                                <p class="text-dark font-weight-bold">Material</p>
+                                <p><mat-checkbox formControlName="chairs">
+                                    Chiars</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                            </div>
+
+                            <div class="card-body mb-3">
+                                <p class="text-dark font-weight-bold">Finish</p>
+                                <p><mat-checkbox formControlName="chairs">
+                                    Chiars</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                            </div>
+
+                            <div class="card-body mb-3">
+                                <p class="text-dark font-weight-bold">Style</p>
+                                <p><mat-checkbox formControlName="chairs">
+                                    Chiars</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                                <p><mat-checkbox formControlName="tables">
+                                    Tables</mat-checkbox>
+                                </p>
+                            </div>
+
+                            <div class="card-body stock mb-3">
+                                <p class="text-dark font-weight-bold">Availability</p>
+                                <p><mat-checkbox formControlName="chairs">
+                                    In stock</mat-checkbox>
+                                </p>
+                            </div>
+
+                            <div class="card-body stock mb-3">
+                                <p class="text-dark font-weight-bold">Price Per Unit</p>
+                                <mat-slider
+                                thumbLabel
+                                [displayWith]="formatLabel"
+                                tickInterval="1000"
+                                step="1000"
+                                min="0"
+                                max="100000"
+                                aria-label="units" class="w-100"></mat-slider>
+                            </div>
+
+                            <div class="card-body stock mb-3">
+                                <p class="text-dark font-weight-bold">Colors</p>
+                                <form action="">
+                                    <mat-button-toggle-group name="colors" id="color-filter" aria-label="colors">
+                                        <mat-button-toggle class="border bg-danger rounded" value="red">
+                                        </mat-button-toggle>
+                                        <mat-button-toggle class="border bg-warning rounded" value="red">
+                                        </mat-button-toggle>
+                                        <mat-button-toggle class="border bg-primary rounded" value="red">
+                                        </mat-button-toggle>
+                                        <mat-button-toggle class="border bg-white rounded" value="red">
+                                        </mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

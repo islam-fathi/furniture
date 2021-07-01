@@ -52,6 +52,8 @@ import { ProductDetailsCarouselComponent } from './components/product-details-ca
 import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FiltersComponent } from './components/filters/filters.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -89,7 +91,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     CategoriesCarouselComponent,
     WinterSaleCarouselComponent,
     ProductDetailsCarouselComponent,
-    SignupSuccessfullyComponent
+    SignupSuccessfullyComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
@@ -112,8 +115,9 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
 ],
-  
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

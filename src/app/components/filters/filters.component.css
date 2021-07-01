@@ -1,0 +1,62 @@
+::ng-deep .accordion h2{
+    font-size: 1.2rem !important;
+    border: 0 !important;
+    border-bottom: 1px solid #c1c1c1 !important;
+    padding-bottom: .5rem;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+::ng-deep .accordion .card-body{
+    height: 250px !important;
+    overflow-y: scroll;
+}
+
+::ng-deep .accordion .card-body.stock{
+    height: auto !important;
+}
+::ng-deep .accordion .card-body.stock::-webkit-scrollbar{
+    height: auto !important;
+    background: transparent;
+
+}
+
+::ng-deep .accordion .card-body::-webkit-scrollbar {
+    background: #82413778;
+    width: 7px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+::ng-deep .accordion .card-body::-webkit-scrollbar-thumb {
+    background-color: var(--base-color);
+    width: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+span.all{
+    background-color: #8241378a;
+    padding: 5px;
+}
+
+span.img{
+    width: 50px !important;
+    height: 50px !important;
+}
+::ng-deep #color-filter{
+    border: 0 !important;
+    box-shadow: none;
+    width: 100%;
+
+}
+::ng-deep #color-filter .mat-button-toggle{
+    height: 30px !important;
+    width: 30px !important;
+    margin-right: 1rem;
+}
