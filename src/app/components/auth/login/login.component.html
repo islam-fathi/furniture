@@ -11,6 +11,12 @@
                         formControlName="email" matInput 
                         id="email" name="email" 
                         required>
+                        <mat-error *ngIf="submitted && f.email.errors && f.email.errors!.required">
+                            Email is required
+                        </mat-error>
+                        <mat-error *ngIf="f.email.errors?.serverError" class="invalid-feedback">
+                            {{ f.email.errors?.serverError }}
+                        </mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="form-group mb-4 d-block m-auto text-center rounded-pill" 
                     style="width: 75%">
@@ -22,6 +28,12 @@
                         [attr.aria-label]="'Hide password'">
                             <mat-icon>{{showPass ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
+                        <mat-error *ngIf="submitted && f.password.errors && f.password.errors!.required">
+                            Password is required
+                        </mat-error>
+                        <mat-error *ngIf="f.password.errors?.serverError" class="invalid-feedback">
+                            {{ f.password.errors?.serverError }}
+                        </mat-error>
                     </mat-form-field>    
                 <div class="forget-password-holder py-3 w-75 m-auto d-flex align-items-center justify-content-between">
                     <a href="#" class="text-muted">Forget Password?</a>

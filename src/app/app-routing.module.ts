@@ -26,6 +26,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { OrderYourDesignComponent } from './components/order-your-design/order-your-design.component';
 import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
+import { LogOutComponent } from './components/auth/logout/log-out/log-out.component';
 
 
 const routes =[
@@ -96,6 +97,10 @@ const routes =[
     {
       path: 'login',
       component: LoginComponent
+    },
+    {
+      path: 'logout',
+      component: LogOutComponent,
     },
     {
       path: 'signup',

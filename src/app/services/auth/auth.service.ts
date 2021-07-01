@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { CartService } from '../cart/cart.service';
 import { environment } from 'src/environments/environment';
 import { mainFunctions } from 'src/main';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -128,13 +129,28 @@ export class AuthService {
   // }
 
   login(user: any): Observable<any> {
-    try {
-      console.log(user);
-      return this.http.post<any>(this._loginUrl, user);
-    } catch (err) {
-      this.errorsHandler.handleError(err);
-    }
+      let request = mainFunctions.requestData('loginData' , user);
+      return this.http.post<any>(this._loginUrl, request)
+      .pipe(
+        tap(data => {
+          if(data.result.status == '200')
+          {
+            this.storeToken(data.data.token);
+            this.storeCustomerData(data.data.customer);
+          }
+            
+        })
+        );
   }
+
+  private storeCustomerData(customer: any) {
+    localStorage.setItem("currentUser", JSON.stringify(customer));
+  }
+
+  private storeToken(token: string) {
+    localStorage.setItem("token", token);
+  }
+
 
   getUserProfile(): Observable<Profile> {
     try {
@@ -145,13 +161,11 @@ export class AuthService {
   }
 
   userLogout() {
-    this.router.navigate(["/auth/login"]);
-    return localStorage.removeItem("token");
+    return localStorage.clear();
   }
 
   isLoggedIn() {
     return !!localStorage.getItem("token");
-    console.log(Response)
   }
 
   getToken() {

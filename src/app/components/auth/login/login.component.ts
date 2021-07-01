@@ -5,6 +5,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { DataSharingService } from 'src/app/services/data-sharing-service.service';
+import { mainFunctions } from 'src/main';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +18,7 @@ export class LoginComponent implements OnInit {
   authCredentialsDto: FormGroup;
   modalRef: BsModalRef;
   showPass = true;
+  submitted = false;
   @ViewChild('invalidCredentials', {static: true}) invCredentials: TemplateRef<any>;
 
   constructor(
@@ -25,27 +28,43 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private alertService: AlertService,
     private modalService: BsModalService,
+    private dataSharingService: DataSharingService
   ) {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/home']);
     }
   }
 
+  get f() { return this.authCredentialsDto.controls; }
+
+
   userLogin() {
-    this.authService.login({data:{loginData:this.authCredentialsDto.value}}).subscribe(
-      res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        this.authService.prepareUserData();
-        if(localStorage.getItem("token") != "undefined"){
-          this.router.navigate([`/home`]);
-        }
-      },
-      error => {
-        this.alertService.error(error);
-        this.openModal(this.invCredentials);
-      }
-    );
+    this.submitted = true;
+    if(this.authCredentialsDto.valid)
+    {
+      this.authService.login(this.authCredentialsDto.value).subscribe(
+        res => {    
+          if(res.result.status == '200'){
+            this.dataSharingService.isUserLoggedIn.next(true);
+            this.router.navigate([`/home`]);
+          }
+          else if(typeof res.result.errors != "undefined") 
+            {
+              let validationErrors = mainFunctions.getError(res.result.errors);
+              Object.keys(validationErrors).forEach(prop => {
+                const formControl = this.authCredentialsDto.get(prop);
+                if (formControl) {
+                  // activate the error message
+                  formControl.setErrors({
+                    serverError: validationErrors[prop as any]
+                  });
+                }
+              });
+            }
+          
+        });
+    }
+    
   }
 
   ngOnInit() {

@@ -52,6 +52,8 @@ import { ProductDetailsCarouselComponent } from './components/product-details-ca
 import { SignupSuccessfullyComponent } from './components/auth/signup-successfully/signup-successfully.component';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { DataSharingService } from './services/data-sharing-service.service';
+import { LogOutComponent } from './components/auth/logout/log-out/log-out.component';
 // import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
 
 @NgModule({
@@ -89,7 +91,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     CategoriesCarouselComponent,
     WinterSaleCarouselComponent,
     ProductDetailsCarouselComponent,
-    SignupSuccessfullyComponent
+    SignupSuccessfullyComponent,
+    LogOutComponent
   ],
   imports: [
     BrowserModule,
@@ -112,6 +115,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    DataSharingService
 ],
   
   bootstrap: [AppComponent],
