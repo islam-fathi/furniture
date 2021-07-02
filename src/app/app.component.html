@@ -254,17 +254,82 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedMenu">
                     <ul class="navbar-nav m-auto pt-2 pt-md-0">
-                        <li class="nav-item active">
-                            <a mat-button class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active" >Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a mat-button class="nav-link" [routerLink]="['./']" routerLinkActive="active" >Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a mat-button class="nav-link" [routerLink]="['/shop']">Shop</a>
+                            <button mat-button class="nav-link" id="category-dropdown" [matMenuTriggerFor]="menu">Shop</button>
+                            <mat-menu #menu="matMenu" id="categories-menu">
+                                <div class="menu-top py-1 d-flex align-items-center justify-content-between">
+                                    <div class="title-holder">
+                                        <h3 class="title font-weight-bold mb-0">Home Decor</h3>
+                                        <p class="base-color">Create & live your uniqe style</p>        
+                                    </div>
+                                    <div class="count"><span class="text-muted">1,234 items</span></div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/shop']" routerLinkActive="active" >
+                                            <mat-icon class="base-color">add_shopping_cart</mat-icon>
+                                            All Products
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/chair.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/armchair_PNG7028.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/Chair-PNG-image.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/PNGPIX-COM-Chair-PNG-Transparent-Image-1.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/sofa_PNG6946.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/chair-ingrid.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/chair-ingrid.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
+                                            <img src="assets/images/PNG content/chair-ingrid.png" alt="">
+                                            Bedrooms
+                                        </button>
+                                    </div>
+                                </div>
+                            </mat-menu>
                         </li>
                         <li class="nav-item">
-                            <a mat-button class="nav-link" [routerLink]="['/about']">About Us</a>
+                            <a mat-button class="nav-link" routerLinkActive="active" [routerLink]="['/about']">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a mat-button class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+                            <a mat-button class="nav-link" routerLinkActive="active" [routerLink]="['/contact']">Contact Us</a>
                         </li>
                     </ul>
                 </div>

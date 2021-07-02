@@ -1,3 +1,6 @@
+::ng-deep .nav-link.mat-button-wrapper{
+    font-size: 1rem !important;
+}
 ::ng-deep .mat-menu-panel{
     max-width: inherit !important;
 }
@@ -35,6 +38,7 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
 .cart-item-holder{
     padding-bottom: 1rem;
     margin-bottom: 1rem;

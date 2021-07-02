@@ -124,7 +124,6 @@ const routes =[
   resolve: {
     products: ProductResolverService
   }
-
 },
 {
   path: 'product-details',

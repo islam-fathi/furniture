@@ -22,6 +22,7 @@ body {
     --base-color: #824137
 }
 
+
 .base-color {
     color: var(--base-color) !important;
 }
@@ -34,7 +35,7 @@ body {
     border-color: var(--base-color) !important;
 }
 
-.active a {
+.active a, .active {
     color: var(--base-color) !important;
 }
 
@@ -48,7 +49,7 @@ a.nav-link {
     
 }
 
-a.nav-link:hover {
+a.nav-link:hover, button.nav-link:hover {
     color: var(--base-color) !important;
 }
 
