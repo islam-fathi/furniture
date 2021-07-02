@@ -39,22 +39,6 @@ export class LoginComponent implements OnInit {
 
 
   userLogin() {
-<<<<<<< HEAD
-    this.authService.login({data:{loginData:this.authCredentialsDto.value}}).subscribe(
-      res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        this.authService.prepareUserData();
-        if(localStorage.getItem("token") != "undefined"){
-          this.router.navigate([`/profile`]);
-        }
-      },
-      error => {
-        this.alertService.error(error);
-        this.openModal(this.invCredentials);
-      }
-    );
-=======
     this.submitted = true;
     if(this.authCredentialsDto.valid)
     {
@@ -81,7 +65,6 @@ export class LoginComponent implements OnInit {
         });
     }
     
->>>>>>> 1e7e89cc25b27267c63a6afd0368947048787c0f
   }
 
   ngOnInit() {
