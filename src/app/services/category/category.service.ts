@@ -4,33 +4,30 @@ import { Observable } from 'rxjs';
 import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
 import { environment } from 'src/environments/environment';
+import { mainFunctions } from 'src/main';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  private categoryUrl = environment.apiUrl+environment.appMain+``;
+  private categoryByIdUrl = environment.apiUrl+environment.appMain+`ADM/Category/getCategoryByCode`;
+  private categoryListUrl = environment.apiUrl+environment.appMain+`ADM/Category/getCategoryList`;
 
   constructor(private http: HttpClient) {
   }
 
   private errorHandler: ErrorHandler = new ErrorHandler();
 
-  getCategories(): Observable<Category[]> {
-    try {
-      return this.http.get<Category[]>(this.categoryUrl);
-    } catch (error) {
-      this.errorHandler.handleError(error);
-    }
+  getCategories(): Observable<any> {
+
+    let request = mainFunctions.requestData();
+
+    return this.http.post<any>(this.categoryListUrl, request);    
   }
 
-  getCategoryById(id: number): Observable<Category> {
-    try {
-      const urlOfCategory = `${this.categoryUrl}/${id}`;
-      return this.http.get<Category>(urlOfCategory);
-    } catch (error) {
-      this.errorHandler.handleError(error);
-    }
+  getCategoryById(CategoryData: any): Observable<any> {
+    let request = mainFunctions.requestData('category' , CategoryData);
+    return this.http.post(this.categoryByIdUrl, request);
   }
 
 }

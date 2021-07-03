@@ -274,52 +274,10 @@
                                             All Products
                                         </button>
                                     </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/chair.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/armchair_PNG7028.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/Chair-PNG-image.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/PNGPIX-COM-Chair-PNG-Transparent-Image-1.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/sofa_PNG6946.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/chair-ingrid.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/chair-ingrid.png" alt="">
-                                            Bedrooms
-                                        </button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button mat-menu-item [routerLink]="['/categories/:id']" routerLinkActive="router-link-active" >
-                                            <img src="assets/images/PNG content/chair-ingrid.png" alt="">
-                                            Bedrooms
+                                    <div *ngFor="let category of categories" class="col-md-4">
+                                        <button mat-menu-item [routerLink]="['/categories', category.catNo]" routerLinkActive="router-link-active" >
+                                            <img src="{{ category.images[0]?.imgPath }}" alt="Photo of {{category.categoryName}}" (error) ="onImgError($event)">
+                                            {{category.catNameEn}}
                                         </button>
                                     </div>
                                 </div>

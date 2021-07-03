@@ -11,22 +11,29 @@ export class AppComponent implements OnInit{
   
   title = 'Lamaderas';
 
-  categories: Category[];
+  categories: any[];
   constructor(public authService: AuthService, private categoryService: CategoryService) {
     // authService.prepareUserData();
     // this.prepareCategories();
   }
 
-  // prepareCategories(){
-  //   this.categoryService.getCategories()
-  //   .subscribe(resData => {
-  //     this.categories = resData;
-  //   })
-  // }
+  prepareCategories(){
+    this.categoryService.getCategories().subscribe(
+      (result) =>{
+        if(result.result.status == '200')
+          this.categories = result.data.categoryList;
+      }
+    );
+  }
 
   ngOnInit():void{
     // this.authService.prepareUserData();
-    // this.prepareCategories();
+    this.prepareCategories();
+  }
+
+  onImgError($event)
+  {
+    $event.target.src = "http://placehold.it/350x150/777777";
   }
 
 }
