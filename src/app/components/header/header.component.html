@@ -145,9 +145,9 @@
                                     <button mat-menu-item>
                                         <span>Account Setting</span>
                                     </button>
-                                    <button mat-menu-item>
-                                        <span routerLink="/auth/logout">Logout</span>
-                                    </button>
+                                    <a mat-menu-item>
+                                        <span [routerLink]="['/auth/logout']">Logout</span>
+                                    </a>
                                 </mat-menu>
                             </li>
                         </ul>

@@ -65,7 +65,7 @@ const routes =[
   // resolve: {
   //   profile: ProfileResolverService
   // },
-  // canActivate: [UserAuthGuard]
+   canActivate: [UserAuthGuard]
 },
 {
   path: 'app-order-your-design',
