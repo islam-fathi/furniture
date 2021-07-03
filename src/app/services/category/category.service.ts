@@ -10,8 +10,8 @@ import { mainFunctions } from 'src/main';
   providedIn: 'root'
 })
 export class CategoryService {
-  private categoryByIdUrl = environment.apiUrl+environment.appMain+`ADM/Category/getCategoryByCode`;
-  private categoryListUrl = environment.apiUrl+environment.appMain+`ADM/Category/getCategoryList`;
+  private categoryByIdUrl = environment.apiUrl+environment.appMain+`/ADM/Category/getCategoryByCode`;
+  private categoryListUrl = environment.apiUrl+environment.appMain+`/ADM/Category/getCategoryList`;
 
   constructor(private http: HttpClient) {
   }

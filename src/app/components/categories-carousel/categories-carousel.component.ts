@@ -57,7 +57,7 @@ export class CategoriesCarouselComponent implements OnInit {
 
   onImgError($event)
   {
-    $event.target.src = "http://placehold.it/350x150/777777";
+    $event.target.src = "assets/images/placeholder-image.png";
   }
 
   deatilsCategory(categoryNo)
