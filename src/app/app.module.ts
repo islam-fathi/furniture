@@ -28,6 +28,7 @@ import {
   PopoverModule,
   TooltipModule,
 } from 'ngx-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
@@ -108,6 +109,7 @@ import { LogOutComponent } from './components/auth/logout/log-out/log-out.compon
     FilesModule,
     HttpClientModule,
     SlickCarouselModule,
+    NgxPaginationModule,
     CarouselModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),

@@ -1,0 +1,29 @@
+/* pagination */
+
+nav .pagination .page-item .page-link {
+    color: var(--base-color);
+    box-shadow: 2px 2px 15px -2px #c1c1c1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 0;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
+    -o-transition: .5s all;
+}
+
+nav .pagination .page-item.active .page-link,
+nav .pagination .page-item .page-link:hover {
+    background-color: var(--base-color) !important;
+    border: 0 !important;
+    color: #fff;
+}
+
+nav .pagination li:first-child .page-link,
+nav .pagination li:last-child .page-link {
+    box-shadow: none !important;
+}

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from 'src/app/models/category';
@@ -21,8 +21,8 @@ export class CategoryService {
   getCategories(): Observable<any> {
 
     let request = mainFunctions.requestData();
-
-    return this.http.post<any>(this.categoryListUrl, request);    
+    let headers = new HttpHeaders({'Authorization':'Bearer '});
+    return this.http.post(this.categoryListUrl,request,{headers: headers});    
   }
 
   getCategoryById(CategoryData: any): Observable<any> {

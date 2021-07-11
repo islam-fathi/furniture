@@ -1,57 +1,46 @@
-    <!-- breadcrumb   -->
-    <nav aria-label="breadcrumb">
-        <div class="container px-md-0">
-            <ol class="breadcrumb bg-white px-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Shop</li>
-            </ol>
-        </div>
-    </nav>
-
-
-    <div class="search-result-holder section most-viewed py-4">
-        <div class="container">
-            <h2 class="base-color py-3">Shop</h2>
-            <div class="row mb-4">
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <app-product-card></app-product-card>
-                </div>
-            </div>
-            <nav aria-label="..." class="py-4">
-                <ul class="pagination justify-content-center" >
-                    <li class="page-item disabled border-0 mr-3">
-                        <span class="page-link"><i class="fas fa-chevron-left"></i></span>
-                    </li>
-                    <li class="page-item mr-3"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active mr-3" aria-current="page">
-                        <span class="page-link">2</span>
-                    </li>
-                    <li class="page-item mr-3"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item mr-3 border-0">
-                        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+  <!-- breadcrumb   -->
+  <nav aria-label="breadcrumb">
+    <div class="container px-md-0">
+        <ol class="breadcrumb bg-white px-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Shop</li>
+        </ol>
     </div>
+</nav>
+
+
+<div class="search-result-holder section most-viewed py-4">
+    <div class="container">
+        <h2 class="base-color py-3">Shop</h2>
+        <div class="row mb-4">
+            <div class="col-md-4 mb-4" *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: p }">
+                <app-product-card [product]='product'></app-product-card>
+            </div>
+        </div>
+        <!-- <nav aria-label="..." class="py-4">
+            <ul class="pagination justify-content-center" >
+                <li class="page-item disabled border-0 mr-3">
+                    <span class="page-link"><i class="fas fa-chevron-left"></i></span>
+                </li>
+                <li class="page-item mr-3"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active mr-3" aria-current="page">
+                    <span class="page-link">2</span>
+                </li>
+                <li class="page-item mr-3"><a class="page-link" href="#">3</a></li>
+                <li class="page-item mr-3 border-0">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav> -->
+        <nav aria-label="..." class="py-4">
+            <ul class="pagination justify-content-center" >
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </ul>
+        </nav>
+        <!-- <ngb-pagination class="pagination justify-content-center"
+            [(page)]="page"
+            [pageSize]="pageSize"
+            [collectionSize]="products.length">
+        </ngb-pagination> -->
+    </div>
+</div>

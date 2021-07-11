@@ -1,17 +1,17 @@
 <div  [routerLink]="['/product-details']" class="product-card p-3 mb-3 rounded-sm">
     <div class="product-header text-center">
-        <img src="../../../assets/images/PNG content/Layer 7.png" class="" alt="">
+        <img src="{{image}}" (error) ="onImgError($event)" class="" alt="">
     </div>
     <div class="product-footer">
         <div class="row align-items-center">
             <div class="col-8 pr-0">
-                <p class="text-muted mb-1">Cobalt Union</p>
+                <p class="text-muted mb-1">{{product.prodNameEn}}</p>
                 <a [routerLink]="['/product-details']">
                     <h4 class="text-black font-weight-bold text-truncate">
-                        Merry's cat Eye Sunglasses
+                        {{product.prodDscEn}}
                     </h4>
                 </a>
-                <h5 class="base-color font-weight-bold">125.00 SAR</h5>
+                <h5 class="base-color font-weight-bold">{{product.prodPrice}} LE</h5>
             </div>
             <div class="col-4 pl-0 text-right">
                 <a href="#" mat-button

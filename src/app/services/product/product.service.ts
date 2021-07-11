@@ -4,27 +4,25 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ErrorHandler } from 'src/app/shared/error-handler';
 import { environment } from 'src/environments/environment';
+import { mainFunctions } from 'src/main';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private url = environment.apiUrl+environment.appMain+'/prod/Product/getProductList';
+  private getProductListUrl = environment.apiUrl+environment.appMain+'/prod/Product/getProductList';
   private errorHandler: ErrorHandler = new ErrorHandler();
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<Product[]> {
-    try {
-      return this.http.get<Product[]>(this.url);
-    } catch (error) {
-      this.errorHandler.handleError(error);
-    }
+  getProductList(): Observable<any> {
+    let request = mainFunctions.requestData();
+      return this.http.post(this.getProductListUrl, request);
   }
 
   getProductsById(id: number): Observable<Product> {
     try {
-      const urlById = `${this.url}/${id}`;
+      const urlById = `${this.getProductListUrl}/${id}`;
       return this.http.get<Product>(urlById);
     } catch (error) {
       this.errorHandler.handleError(error);
@@ -38,7 +36,7 @@ export class ProductService {
   ): Observable<Product> {
     try {
       const params = new HttpParams().set('quantity', cartQuantity.toString());
-      const urlById = `${this.url}/${productId}/addtocart/${cartItemId}`;
+      const urlById = `${this.getProductListUrl}/${productId}/addtocart/${cartItemId}`;
       return this.http.post<Product>(urlById, null, {
         params,
       });
@@ -56,7 +54,7 @@ export class ProductService {
         'cartQuantity',
         cartQuantity.toString()
       );
-      const urlById = `${this.url}/${productId}/update-quantity`;
+      const urlById = `${this.getProductListUrl}/${productId}/update-quantity`;
       return this.http.patch<void>(urlById, null, {
         params,
       });

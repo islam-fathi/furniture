@@ -11,6 +11,6 @@ export class ProductResolverService implements Resolve<Product[]> {
 
   constructor(private productService: ProductService) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product[]> {
-    return this.productService.getProducts();
+    return this.productService.getProductList();
   }
 }
