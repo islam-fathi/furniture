@@ -9,7 +9,14 @@ import { ProductService } from 'src/app/services/product/product.service';
 export class ShopComponent implements OnInit {
 
   products: any =[];
-  p: number = 1;
+  pageCurrent: number = 1;
+
+  config = {
+    id: 'custom',
+    itemsPerPage: 10,
+    currentPage: this.pageCurrent,
+    totalItems: this.products.lenght
+  };
   
   constructor(private productServise: ProductService) {
     
@@ -23,4 +30,10 @@ export class ShopComponent implements OnInit {
       }
     );
   }
+
+  onPageChange(event){
+    console.log(event);
+    this.config.currentPage = event;
+  }
+
 }
