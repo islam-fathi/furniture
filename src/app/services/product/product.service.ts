@@ -10,13 +10,18 @@ import { mainFunctions } from 'src/main';
   providedIn: 'root',
 })
 export class ProductService {
-  private getProductListUrl = environment.apiUrl+environment.appMain+'/prod/Product/getProductList';
+  private getProductListUrl = environment.apiUrl+environment.appMain+'/PROD/Product/getProductList';
   private errorHandler: ErrorHandler = new ErrorHandler();
 
   constructor(private http: HttpClient) {}
 
   getProductList(): Observable<any> {
     let request = mainFunctions.requestData();
+      return this.http.post(this.getProductListUrl, request);
+  }
+
+  getProductFilteresList(filter:any): Observable<any> {
+    let request = mainFunctions.requestData('filter' , filter);
       return this.http.post(this.getProductListUrl, request);
   }
 
