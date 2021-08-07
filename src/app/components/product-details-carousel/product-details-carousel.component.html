@@ -6,7 +6,7 @@
 (afterChange)="afterChange($event)"
 (beforeChange)="beforeChange($event)">
 <div ngxSlickItem *ngFor="let slide of slides" class="slide position-relative">
-        <img src="{{ slide.img }}" alt="" class="h-100" width="100%">
+        <img src="{{ slide.imgPath }}" alt="" (error) ="onImgError($event)" class="h-100" width="100%">    
 </div>
 </ngx-slick-carousel>
 

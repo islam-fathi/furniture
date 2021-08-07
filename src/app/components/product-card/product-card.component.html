@@ -1,4 +1,4 @@
-<div  [routerLink]="['/product-details']" class="product-card p-3 mb-3 rounded-sm">
+<div [routerLink]="['/products', product.prodNo]" class="product-card p-3 mb-3 rounded-sm">
     <div class="product-header text-center">
         <img src="{{image}}" (error) ="onImgError($event)" class="" alt="">
     </div>
@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-8 pr-0">
                 <p class="text-muted mb-1">{{product.prodName}}</p>
-                <a [routerLink]="['/product-details']">
+                <a [routerLink]="['/products', product.prodNo]">
                     <h4 class="text-black font-weight-bold text-truncate">
                         {{product.prodDsc}}
                     </h4>

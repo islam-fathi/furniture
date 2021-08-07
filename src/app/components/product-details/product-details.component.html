@@ -13,23 +13,23 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-8">
-                <app-product-details-carousel></app-product-details-carousel>
-                <div class="video-holder" class="position-relative">
+                <app-product-details-carousel [slides]='product.images'></app-product-details-carousel>
+                <!-- <div class="video-holder" class="position-relative">
                     <img src="../../../assets/images/category2.jpg" class="" alt="">
                     <i class="fas fa-play-circle position-absolute base-color fa-4x"></i>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4">
                 <div class="d-flex align-items-center justify-content-between">
-                    <h2>product name</h2> 
+                    <h2>{{product.prodName}}</h2> 
                     <i class="far fa-heart fa-2x base-color"></i>
                 </div>
                 <div class="description">
                     <p class="text-muted ">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, veritatis enim harum iure atque facilis dolores nemo veniam neque quasi cum sed numquam tenetur aliquid similique alias labore doloremque. Facilis?
+                        {{product.prodDsc}}
                     </p>
                 </div>
-                <h2 class="price base-color ">125.00 SAR</h2>
+                <h2 class="price base-color ">{{product.prodPrice}} SAR</h2>
 
                 <div class="size mb-3">
                     <button mat-button [matMenuTriggerFor]="menu" class="w-100 bg-light text-left py-2">
@@ -83,37 +83,38 @@
                     <tbody>
                         <tr>
                             <td><h3>Price:</h3></td>
-                            <td>152.00 SAR</td>
+                            <td>{{product.prodPrice}} SAR</td>
                         </tr>
                         <tr>
                             <td><h3>Materials:</h3></td>
                             <td>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-1">Cotton</li>
-                                    <li class="mb-1">Billow</li>
-                                    <li class="">Lorem</li>
+                                    <li class="mb-1" *ngFor="let material of product.prodMaterialList">{{material.materialNm}}</li>
                                 </ul>
-                        </td>
+                            </td>
                         </tr>
                         <tr>
                             <td><h3>Dimensions:</h3></td>
-                            <td>52 X 50 X 88 cm.</td>
+                            <td>{{product.dimWidth}} X {{product.dimHight}} X {{product.dimDepth}} cm.</td>
                         </tr>
                         <tr>
                             <td><h3>Category:</h3></td>
-                            <td>Bedroom</td>
+                            <td>{{product.catName}}</td>
                         </tr>
                         <tr>
                             <td><h3>finish:</h3></td>
-                            <td>Bamboo</td>
+                            <td>{{product.finishName}}</td>
                         </tr>
                         <tr>
                             <td><h3>Style:</h3></td>
-                            <td>Modern</td>
+                            <td>{{product.styleName}}</td>
                         </tr>
                         <tr>
                             <td><h3>Availability:</h3></td>
-                            <td>In stock</td>
+                            <td *ngIf="product.prodAvailability;then content">In stock</td>
+                            <ng-template #content>
+                                <td>Out of stock</td>
+                            </ng-template>
                         </tr>
                         <tr>
                             <td><h3>Color:</h3></td>
@@ -121,7 +122,7 @@
                         </tr>
                         <tr>
                             <td><h3>Warranty:</h3></td>
-                            <td>6 Months</td>
+                            <td>{{product.warranty}} Months</td>
                         </tr>
 
                     </tbody>
