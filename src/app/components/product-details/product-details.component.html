@@ -111,7 +111,7 @@
                         </tr>
                         <tr>
                             <td><h3>Availability:</h3></td>
-                            <td *ngIf="product.prodAvailability;then content">In stock</td>
+                            <td *ngIf="product.prodAvailability;else content">In stock</td>
                             <ng-template #content>
                                 <td>Out of stock</td>
                             </ng-template>
