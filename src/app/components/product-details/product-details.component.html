@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-8">
-                <app-product-details-carousel [slides]='product.images'></app-product-details-carousel>
+                <app-product-details-carousel [slides]='images'></app-product-details-carousel>
                 <!-- <div class="video-holder" class="position-relative">
                     <img src="../../../assets/images/category2.jpg" class="" alt="">
                     <i class="fas fa-play-circle position-absolute base-color fa-4x"></i>
@@ -31,30 +31,6 @@
                 </div>
                 <h2 class="price base-color ">{{product.prodPrice}} SAR</h2>
 
-                <div class="size mb-3">
-                    <button mat-button [matMenuTriggerFor]="menu" class="w-100 bg-light text-left py-2">
-                        Product Size 
-                        <i class="fas fa-chevron-right float-right"></i>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                    <button mat-menu-item>Size 1</button>
-                    <button mat-menu-item>Size 2</button>
-                    <button mat-menu-item>Size 3</button>
-                    </mat-menu>
-                </div>
-
-                <div class="finish mb-3">
-                    <button mat-button [matMenuTriggerFor]="menu" class="w-100 bg-light text-left py-2">
-                        Finish color 
-                        <i class="fas fa-chevron-right float-right"></i>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                    <button mat-menu-item>Brown Finish</button>
-                    <button mat-menu-item>Green Finish</button>
-                    <button mat-menu-item>Red Finish</button>
-                    </mat-menu>
-                </div>
-
                 <div class="color">
                     <p>
                         <mat-button-toggle-group name="fontStyle" class="py-3" aria-label="Font Style">
@@ -65,10 +41,10 @@
                     </p>
                 </div>
                 <div class="btns-holder">
-                    <a routerLink="../checkout" mat-button 
-                    class="btn text-white rounded-pill mb-3 d-block py-2 px-5 base-bg hover-invers hvr-skew text-uppercase">Buy Now</a>
+                    <!-- <a routerLink="../checkout" mat-button 
+                    class="btn text-white rounded-pill mb-3 d-block py-2 px-5 base-bg hover-invers hvr-skew text-uppercase">Buy Now</a> -->
                     <a  mat-button 
-                    class="btn base-color add-to-cart border-base mb-3 rounded-pill d-block py-2 px-5 hvr-skew text-uppercase">Add to Cart</a>
+                    class="btn base-color add-to-cart border-base mb-3 rounded-pill d-block py-2 px-5 hvr-skew text-uppercase" (click)="AddToCart(product.prodNo)">Add to Cart</a>
                 </div>
 
 

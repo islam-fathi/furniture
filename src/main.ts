@@ -24,6 +24,13 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   
       return request;
     }
+
+    static getCurretUser() {
+      if (!localStorage.getItem('currentUser'))
+        return null; 
+      let text = localStorage.getItem("currentUser");
+      return JSON.parse(text);
+    }
   
     static getCurrentLanguage()
     {

@@ -3,6 +3,8 @@ import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from 'src/app/models/cart';
 import { CartItem } from 'src/app/models/cart-item';
+import { environment } from 'src/environments/environment';
+import { mainFunctions } from 'src/main';
 
 @Injectable({
   providedIn: 'root'
@@ -12,17 +14,20 @@ export class CartService {
   constructor(private http: HttpClient) {
   }
 
-  private _cartUrl = `http://localhost:4200/cart`;
+  private _AddcartUrl = environment.apiUrl+environment.appMain+`/Cart/addCart`;
+  private _cartUrl = environment.apiUrl+environment.appMain+`/Cart/getCartProductList`;
   private _cartItemUrl = `http://localhost:4200/cart_items`;
   private errorHandler: ErrorHandler = new ErrorHandler();
 
-  getCart(id: number): Observable<Cart> {
-    try {
-      const urlById = `${this._cartUrl}/${id}`;
-      return this.http.get<Cart>(urlById);
-    } catch (error) {
-      this.errorHandler.handleError(error);
-    }
+
+  addCart(CartItemData: any): Observable<any> {
+    let request = mainFunctions.requestData('cart' , CartItemData);
+    return this.http.post(this._AddcartUrl, request);
+  }
+
+  getCart(CartItemData: any): Observable<any> {
+    let request = mainFunctions.requestData('cart' , CartItemData);
+    return this.http.post(this._cartUrl, request);
   }
 
   getCartItem(id: number): Observable<CartItem> {
