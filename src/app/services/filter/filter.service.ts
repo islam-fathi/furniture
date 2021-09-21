@@ -9,10 +9,10 @@ import { mainFunctions } from 'src/main';
 })
 export class FilterService {
 
-  _allMaterialsUrl = environment.apiUrl+environment.appMain+'/PROD/Material/getMaterialList';
-  _allFinishesUrl = environment.apiUrl+environment.appMain+'/PROD/Finish/getFinishList';
-  _allStylesUrl = environment.apiUrl+environment.appMain+'/PROD/Style/getStyleList';
-  _allColorsUrl = environment.apiUrl+environment.appMain+'/PROD/Color/getColorList';
+  _allMaterialsUrl = environment.apiUrl+environment.appMain+'/Material/getMaterialList';
+  _allFinishesUrl = environment.apiUrl+environment.appMain+'/Finish/getFinishList';
+  _allStylesUrl = environment.apiUrl+environment.appMain+'/Style/getStyleList';
+  _allColorsUrl = environment.apiUrl+environment.appMain+'/Color/getColorList';
 
 
   constructor(private http: HttpClient) { }

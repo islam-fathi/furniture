@@ -10,8 +10,8 @@ import { mainFunctions } from 'src/main';
   providedIn: 'root',
 })
 export class ProductService {
-  private getProductListUrl = environment.apiUrl+environment.appMain+'/PROD/Product/getProductList';
-  private getProductByid = environment.apiUrl+environment.appMain+'/PROD/Product/getProductByCode';
+  private getProductListUrl = environment.apiUrl+environment.appMain+'/Product/getProductList';
+  private getProductByid = environment.apiUrl+environment.appMain+'/Product/getProductByCode';
   private errorHandler: ErrorHandler = new ErrorHandler();
 
   constructor(private http: HttpClient) {}
