@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+  ::ng-deep footer h6,
+  ::ng-deep .mat-toolbar h6 {
+    font-size: 19px !important;
+    font-weight: 500 !important;
+  }
+}

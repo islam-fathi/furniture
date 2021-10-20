@@ -1,124 +1,180 @@
-    <!-- header with bg image  -->
-    <div class="section has-bg position-relative d-flex align-items-center">
-        <div class="container">
-            <div class="row flex-column justify-content-center align-items-center position-relative">
-                <h2 class="text-white text-center">We have dream to connect wholselers to <br> independent customers</h2>
-                <button mat-button href="#" class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew">
-                    Explore
-                </button>
-            </div>
-        </div>
+<!-- header with bg image  -->
+<div class="section has-bg position-relative d-flex align-items-center">
+  <div class="container">
+    <div
+      class="
+        row
+        flex-column
+        justify-content-center
+        align-items-center
+        position-relative
+      "
+    >
+      <h2 class="text-white text-center mobile-titles">
+        We have dream to connect wholselers to <br />
+        independent customers
+      </h2>
+      <button
+        mat-button
+        href="#"
+        class="btn text-white rounded-pill base-bg hover-invers hvr-skew"
+      >
+        Explore
+      </button>
     </div>
+  </div>
+</div>
 
-    <!-- most viewed products  -->
-    <div class="section most-viewed py-4">
-        <div class="container">
-            <h2 class="base-color text-center py-3">Most Viewed Products</h2>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-            </div>
-            <p class="text-muted text-center"><a [routerLink]="['/product-list']" class="hvr-float text-muted">Explore More <i class="fas fa-chevron-right"></i></a></p>
-        </div>
+<!-- most viewed products  -->
+<div class="section most-viewed py-4">
+  <div class="container">
+    <h2 class="base-color text-center py-3 mobile-titles">
+      Most Viewed Products
+    </h2>
+    <div class="row mb-3">
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
     </div>
+    <p class="text-muted text-center">
+      <a [routerLink]="['/product-list']" class="hvr-float text-muted"
+        >Explore More <i class="fas fa-chevron-right"></i
+      ></a>
+    </p>
+  </div>
+</div>
 
-    <!-- categories slider  -->
-    <div class="secton categories py-4">
-        <h2 class="base-color text-center py-3">Categories</h2>
-        <app-categories-carousel></app-categories-carousel>
+<!-- categories slider  -->
+<div class="secton categories py-4">
+  <h2 class="base-color text-center py-3 mobile-titles">Categories</h2>
+  <app-categories-carousel></app-categories-carousel>
+</div>
+
+<!-- Top Products  -->
+<div class="section most-viewed py-4">
+  <div class="container">
+    <h2 class="base-color text-center py-3 mobile-titles">Top Products</h2>
+    <div class="row mb-3">
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
     </div>
+    <p class="text-muted text-center">
+      <a [routerLink]="['/product-list']" class="hvr-float text-muted"
+        >Explore More <i class="fas fa-chevron-right"></i
+      ></a>
+    </p>
+  </div>
+</div>
 
-    <!-- Top Products  -->
-    <div class="section most-viewed py-4">
-        <div class="container">
-            <h2 class="base-color text-center py-3">Top Products</h2>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-            </div>
-            <p class="text-muted text-center"><a  [routerLink]="['/product-list']" class="hvr-float text-muted">Explore More <i class="fas fa-chevron-right"></i></a></p>
-        </div>
+<!-- winter sale slider  -->
+<div class="secton winter py-5">
+  <div class="container">
+    <app-winter-sale-carousel></app-winter-sale-carousel>
+  </div>
+</div>
+
+<!-- order your design  -->
+<div class="order-design section py-5">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <h2 class="base-color mb-4 mobile-titles">Order Your Design</h2>
+        <p class="text-muted mb-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+          nesciunt nihil veniam! Ad minus itaque, neque reiciendis, doloremque
+          consequuntur necessitatibus quasi esse sint harum, eius voluptatem eum
+          exercitationem. Repudiandae, natus. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Blanditiis possimus unde libero,
+          similique fugiat, necessitatibus aliquid ipsam voluptates doloremque
+          sequi excepturi illum delectus neque quod ut, est eligendi dolores ad.
+          dolor sit amet, consectetur adipisicing elit. Blanditiis possimus unde
+          libero, similique fugiat, necessitatibus aliquid ipsam voluptates
+          doloremque sequi excepturi illum delectus neque quod ut, est eligendi
+          dolores ad.
+        </p>
+        <a
+          routerLink="/app-order-your-design"
+          mat-button
+          class="
+            btn
+            text-white
+            rounded-pill
+            base-bg
+            hover-invers
+            hvr-skew
+            text-uppercase
+          "
+          >Design Now</a
+        >
+      </div>
+      <div class="col-md-7">
+        <img class="w-100" src="../../../assets/images/category2.jpg" alt="" />
+      </div>
     </div>
+  </div>
+</div>
 
-    <!-- winter sale slider  -->
-    <div class="secton winter py-5">
-        <div class="container">
-            <app-winter-sale-carousel></app-winter-sale-carousel>
-        </div>
+<!-- also viewed  -->
+<div class="section most-viewed py-4">
+  <div class="container">
+    <h2 class="base-color text-center py-3 mobile-titles">
+      Customers also viewed
+    </h2>
+    <div class="row mb-3">
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
     </div>
+    <p class="text-muted text-center">
+      <a [routerLink]="['/product-list']" class="hvr-float text-muted"
+        >Explore More <i class="fas fa-chevron-right"></i
+      ></a>
+    </p>
+  </div>
+</div>
 
-    <!-- order your design  -->
-    <div class="order-design section py-5">
-        <div class="container py-3">
-            <div class="row">
-                <div class="col-md-5 mb-3">
-                    <h2 class="base-color mb-4">Order Your Design</h2>
-                    <p class="text-muted mb-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nesciunt nihil veniam! Ad minus itaque, neque reiciendis, doloremque consequuntur necessitatibus quasi esse sint harum, eius voluptatem eum exercitationem. Repudiandae, natus. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit. Blanditiis possimus unde libero, similique fugiat, necessitatibus aliquid ipsam voluptates doloremque sequi excepturi illum delectus neque quod ut, est eligendi dolores ad. dolor sit
-                        amet, consectetur adipisicing elit. Blanditiis possimus unde libero, similique fugiat, necessitatibus aliquid ipsam voluptates doloremque sequi excepturi illum delectus neque quod ut, est eligendi dolores ad.
-                    </p>
-                    <a routerLink="/app-order-your-design" mat-button class="btn text-white rounded-pill py-2 px-5 base-bg hover-invers hvr-skew text-uppercase">Design Now</a>
-                </div>
-                <div class="col-md-7">
-                    <img class="w-100 " src="../../../assets/images/category2.jpg" alt="">
-                </div>
-            </div>
-        </div>
+<!-- Most Searched Products  -->
+<div class="section most-viewed py-4">
+  <div class="container">
+    <h2 class="base-color text-center py-3 mobile-titles">
+      Most Searched Products
+    </h2>
+    <div class="row mb-3">
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+      <div class="col-md-4 col-6">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
     </div>
+    <p class="text-muted text-center">
+      <a [routerLink]="['/product-list']" class="hvr-float text-muted"
+        >Explore More <i class="fas fa-chevron-right"></i
+      ></a>
+    </p>
+  </div>
+</div>
 
-    <!-- also viewed  -->
-    <div class="section most-viewed py-4">
-        <div class="container">
-            <h2 class="base-color text-center py-3">Customers also viewed
-            </h2>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-            </div>
-            <p class="text-muted text-center"><a [routerLink]="['/product-list']" class="hvr-float text-muted">Explore More <i class="fas fa-chevron-right"></i></a></p>
-        </div>
-    </div>
-
-    <!-- Most Searched Products  -->
-    <div class="section most-viewed py-4">
-        <div class="container">
-            <h2 class="base-color text-center py-3">Most Searched Products
-            </h2>
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-                <div class="col-md-4">
-                    <app-product-card [product]='product'></app-product-card>
-                </div>
-            </div>
-            <p class="text-muted text-center"><a [routerLink]="['/product-list']" class="hvr-float text-muted">Explore More <i class="fas fa-chevron-right"></i></a></p>
-        </div>
-    </div>
-
-    <app-our-services></app-our-services>
+<app-our-services></app-our-services>

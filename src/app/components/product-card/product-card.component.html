@@ -1,24 +1,38 @@
-<div [routerLink]="['/products', product.prodNo]" class="product-card p-3 mb-3 rounded-sm">
-    <div class="product-header text-center">
-        <img src="{{image}}" (error) ="onImgError($event)" class="" alt="">
+<div
+  [routerLink]="['/products', product.prodNo]"
+  class="product-card p-3 mb-3 rounded-sm"
+>
+  <div class="product-header text-center">
+    <img src="{{ image }}" (error)="onImgError($event)" class="" alt="" />
+  </div>
+  <div class="product-footer">
+    <div class="row align-items-center">
+      <div class="col-md-8 pr-md-0">
+        <p class="text-muted mb-1">{{ product.prodName }}</p>
+        <a [routerLink]="['/products', product.prodNo]">
+          <h4 class="text-black font-weight-bold text-truncate">
+            {{ product.prodDsc }}
+          </h4>
+        </a>
+        <h5 class="base-color font-weight-bold">{{ product.prodPrice }} SAR</h5>
+      </div>
+      <div class="col-md-4 pl-md-0 text-center">
+        <a
+          href="#"
+          mat-button
+          class="
+            btn
+            text-white
+            rounded-pill
+            base-bg
+            hover-invers
+            hvr-skew
+            small-txt
+          "
+        >
+          Add to Basket
+        </a>
+      </div>
     </div>
-    <div class="product-footer">
-        <div class="row align-items-center">
-            <div class="col-8 pr-0">
-                <p class="text-muted mb-1">{{product.prodName}}</p>
-                <a [routerLink]="['/products', product.prodNo]">
-                    <h4 class="text-black font-weight-bold text-truncate">
-                        {{product.prodDsc}}
-                    </h4>
-                </a>
-                <h5 class="base-color font-weight-bold">{{product.prodPrice}} SAR</h5>
-            </div>
-            <div class="col-4 pl-0 text-right">
-                <a href="#" mat-button
-                class="btn text-white rounded-pill py-1 px-2 base-bg hover-invers hvr-skew small-txt">
-                Add to Basket
-            </a>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

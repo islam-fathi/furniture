@@ -1,31 +1,76 @@
-<ngx-slick-carousel id="winter-sale-slider" class="carousel" 
-#slickModal="slick-carousel" 
-[config]="slideConfig" 
-(init)="slickInit($event)"
-(breakpoint)="breakpoint($event)"
-(afterChange)="afterChange($event)"
-(beforeChange)="beforeChange($event)">
-<div ngxSlickItem *ngFor="let slide of slides" class="slide winter-sale-slider">
+<ngx-slick-carousel
+  id="winter-sale-slider"
+  class="carousel"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)"
+>
+  <div
+    ngxSlickItem
+    *ngFor="let slide of slides"
+    class="slide winter-sale-slider"
+  >
     <div class="row">
-        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
-            <div class="content-holder">
-                <h2 class="font-weight-bold">Catch out our
-                    <span class="base-color mb-5 d-block">Winter Sale</span>
-                </h2>
-                <span class="text-muted mb-3" [routerLink]="['/product-details']" >Working Chair</span>
-                <h3 class="font-weight-bold mb-3" [routerLink]="['/product-details']">Wooden Chair</h3>
-                <h4 class="font-weight-lighter mb-3">120 SAR</h4>
-                <a [routerLink]="['/product-details']" mat-button 
-                class="btn text-white rounded-pill py-2 
-                px-5 base-bg hover-invers hvr-skew text-uppercase">
-                Buy now
-            </a>
-            </div>
+      <div
+        class="
+          col-md-6
+          d-flex
+          flex-column
+          align-items-center
+          justify-content-center
+        "
+      >
+        <div class="content-holder">
+          <h2 class="font-weight-bold">
+            Catch out our
+            <span class="base-color mb-md-5 mb-0 d-block">Winter Sale</span>
+          </h2>
+          <span
+            class="text-muted mb-md-3 mb-0"
+            [routerLink]="['/product-details']"
+            >Working Chair</span
+          >
+          <h3
+            class="font-weight-bold mb-md-3 mb-0"
+            [routerLink]="['/product-details']"
+          >
+            Wooden Chair
+          </h3>
+          <h4 class="font-weight-lighter mb-md-3">120 SAR</h4>
+          <a
+            [routerLink]="['/product-details']"
+            mat-button
+            class="
+              btn
+              text-white
+              rounded-pill
+              py-md-2
+              px-md-5
+              py-0
+              px-3
+              base-bg
+              hover-invers
+              hvr-skew
+              text-uppercase
+            "
+          >
+            Buy now
+          </a>
         </div>
-        <div class="col-md-6 text-right">
-            <img [routerLink]="['/product-details']" mat-button  class="float-right" src="{{ slide.img }}" alt="">
-        </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <img
+          [routerLink]="['/product-details']"
+          mat-button
+          class="m-auto"
+          src="{{ slide.img }}"
+          alt=""
+          width="80%"
+        />
+      </div>
     </div>
-</div>
+  </div>
 </ngx-slick-carousel>
-
