@@ -45,7 +45,7 @@ const routes =[
 },
 {
   path: 'shop',
-  component: ShopComponent
+  component: FiltersComponent
 },
 {
   path: 'contact',
